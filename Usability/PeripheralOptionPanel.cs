@@ -348,7 +348,7 @@ namespace Poderosa.Forms {
             bool successful = false;
             string itemname = null;
             try {
-                //Win9x�ł́A���E��Alt�̋�ʂ��ł��Ȃ��̂ŕʁX�̐ݒ�ɂ��邱�Ƃ��֎~����
+                //Win9xでは、左右のAltの区別ができないので別々の設定にすることを禁止する
                 if (System.Environment.OSVersion.Platform == PlatformID.Win32Windows &&
                         ((EnumListItem<AltKeyAction>)_leftAltKeyAction.SelectedItem).Value
                             != ((EnumListItem<AltKeyAction>)_rightAltKeyAction.SelectedItem).Value) {
@@ -362,7 +362,7 @@ namespace Poderosa.Forms {
                 options.Send0x7FByBack = _send0x7FByBack.Checked;
                 options.Zone0x1F = ((EnumListItem<KeyboardStyle>)_zone0x1FBox.SelectedItem).Value;
                 itemname = "Custom Key Setting";
-                KeyFunction.Parse(_customKeySettingsBox.Text); //�p�[�X�ł����OK
+                KeyFunction.Parse(_customKeySettingsBox.Text); //パースできればOK
                 options.CustomKeySettings = _customKeySettingsBox.Text;
                 window_options.AutoCopyByLeftButton = _autoCopyByLeftButton.Checked;
                 options.RightButtonAction = ((EnumListItem<MouseButtonAction>)_rightButtonAction.SelectedItem).Value;
@@ -404,7 +404,7 @@ namespace Poderosa.Forms {
                     s = "Ctrl+D6=0x1E, Ctrl+Minus=0x1F";
                 else //Japanese
                     s = "Ctrl+BackSlash=0x1F";
-                //�ꉞ�p�[�X
+                //一応パース
                 //KeyFunction.Parse(s);
                 if (bld.Length > 0)
                     bld.Append(", ");

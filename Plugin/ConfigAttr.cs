@@ -13,7 +13,7 @@ using System.Reflection;
 using System.Text;
 
 namespace Poderosa {
-    //TODO �ŏI�I�ɂ͔p�~
+    //TODO 最終的には廃止
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
     public abstract class ConfigElementAttribute : Attribute {
         protected string _externalName;

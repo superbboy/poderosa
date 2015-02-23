@@ -52,11 +52,11 @@ namespace Poderosa.Sessions {
             TEnv.ReloadStringResource();
             _terminalViewFactory = new TerminalViewFactory();
             pm.FindExtensionPoint(WindowManagerConstants.VIEW_FACTORY_ID).RegisterExtension(_terminalViewFactory);
-            //‚±‚ÌViewFactory‚ÍƒfƒtƒH
+            //ã“ã®ViewFactoryã¯ãƒ‡ãƒ•ã‚©
             foreach (IViewManagerFactory mf in pm.FindExtensionPoint(WindowManagerConstants.MAINWINDOWCONTENT_ID).GetExtensions())
                 mf.DefaultViewFactory = _terminalViewFactory;
 
-            //ƒƒOƒCƒ“ƒ_ƒCƒAƒƒO‚ÌƒTƒ|[ƒg—p
+            //ãƒ­ã‚°ã‚¤ãƒ³ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã®ã‚µãƒãƒ¼ãƒˆç”¨
             pm.CreateExtensionPoint("org.poderosa.terminalsessions.telnetSSHLoginDialogInitializer", typeof(ITelnetSSHLoginDialogInitializer), this);
             pm.CreateExtensionPoint("org.poderosa.terminalsessions.loginDialogUISupport", typeof(ILoginDialogUISupport), this);
             IExtensionPoint factory_point = pm.CreateExtensionPoint(TERMINAL_CONNECTION_FACTORY_ID, typeof(ITerminalConnectionFactory), this);
@@ -188,18 +188,28 @@ namespace Poderosa.Sessions {
 
     internal class LoginDialogInitializeInfo : ITelnetSSHLoginDialogInitializeInfo {
 
+        private List<string> _groups;
         private List<string> _hosts;
         private List<string> _accounts;
         private List<string> _identityFiles;
-        private List<int> _ports;
+        private List<int> _ports;        
 
         public LoginDialogInitializeInfo() {
+            _groups = new List<string>();
             _hosts = new List<string>();
             _accounts = new List<string>();
             _identityFiles = new List<string>();
             _ports = new List<int>();
             _ports.Add(22);
-            _ports.Add(23); //‚±‚ê‚ç‚ÍƒfƒtƒH
+            _ports.Add(23); //ã“ã‚Œã‚‰ã¯ãƒ‡ãƒ•ã‚©
+        }
+
+        public string[] Groups
+        {
+            get
+            {
+                return _groups.ToArray();
+            }
         }
 
         public string[] Hosts {
@@ -227,6 +237,12 @@ namespace Poderosa.Sessions {
         }
 
         #region ITelnetSSHLoginDialogInitializeInfo
+        public void AddGroup(string value)
+        {
+            if (!_groups.Contains(value) && value.Length > 0)
+                _groups.Add(value);
+        }
+
         public void AddHost(string value) {
             if (!_hosts.Contains(value) && value.Length > 0)
                 _hosts.Add(value);

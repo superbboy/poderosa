@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing;
 
 using Poderosa.Plugins;
 using Poderosa.Forms;
@@ -52,11 +53,12 @@ namespace Poderosa.Sessions {
         }
     }
 
-    //V‚µ‚¢TerminalSession‚ğƒXƒ^[ƒg‚·‚é‚½‚ß‚ÌƒRƒ}ƒ“ƒh
+    //æ–°ã—ã„TerminalSessionã‚’ã‚¹ã‚¿ãƒ¼ãƒˆã™ã‚‹ãŸã‚ã®ã‚³ãƒãƒ³ãƒ‰
     internal class StartCommand : ITerminalSessionStartCommand {
         private enum StartCommandIcon {
             NewConnection,
             Cygwin,
+            NewTabConnection,
         }
 
         public StartCommand(IExtensionPoint pt) {
@@ -67,7 +69,7 @@ namespace Poderosa.Sessions {
 
         //IPoderosaCommand
         public bool CanExecute(ICommandTarget target) {
-            //target‚ÌŒ^ƒ`ƒFƒbƒN‚­‚ç‚¢‚Í‚µ‚½‚Ù‚¤‚ª‚¢‚¢‚©H
+            //targetã®å‹ãƒã‚§ãƒƒã‚¯ãã‚‰ã„ã¯ã—ãŸã»ã†ãŒã„ã„ã‹ï¼Ÿ
             return true;
         }
         public CommandResult InternalExecute(ICommandTarget target, params IAdaptable[] args) {
@@ -88,16 +90,16 @@ namespace Poderosa.Sessions {
             return result != null ? CommandResult.Succeeded : CommandResult.Failed;
         }
 
-        //TODO ‚Ü‚µ‚ÈƒGƒ‰[ƒƒbƒZ[ƒW
+        //TODO ã¾ã—ãªã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
         private void StartCommandArgError() {
             throw new ArgumentException("TerminalSessionStartCommand error");
         }
 
-        //Šî–{‚ÌƒXƒ^[ƒgƒZƒbƒVƒ‡ƒ“
+        //åŸºæœ¬ã®ã‚¹ã‚¿ãƒ¼ãƒˆã‚»ãƒƒã‚·ãƒ§ãƒ³
         public ITerminalSession StartTerminalSession(ICommandTarget target, ITerminalConnection connection, ITerminalSettings settings) {
             Debug.Assert(connection != null);
             Debug.Assert(settings != null);
-            //‚±‚±‚Åƒ^[ƒ~ƒiƒ‹ƒGƒ~ƒ…ƒŒ[ƒ^‚Ì’x‰„‰Šú‰»
+            //ã“ã“ã§ã‚¿ãƒ¼ãƒŸãƒŠãƒ«ã‚¨ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚¿ã®é…å»¶åˆæœŸåŒ–
             TerminalSessionsPlugin.Instance.TerminalEmulatorService.LaterInitialize();
 
             ISessionManager sm = (ISessionManager)TerminalSessionsPlugin.Instance.PoderosaWorld.PluginManager.FindPlugin("org.poderosa.core.sessions", typeof(ISessionManager));
@@ -117,7 +119,7 @@ namespace Poderosa.Sessions {
             return session;
         }
 
-        //Parameter‚©‚çƒXƒ^[ƒg‚·‚éƒ^ƒCƒv ¡‚Ítarget‚Íwindow‹­§‚¾‚ªView‚Å‚à‰Â”\‚É‚µ‚½‚¢
+        //Parameterã‹ã‚‰ã‚¹ã‚¿ãƒ¼ãƒˆã™ã‚‹ã‚¿ã‚¤ãƒ— ä»Šã¯targetã¯windowå¼·åˆ¶ã ãŒViewã§ã‚‚å¯èƒ½ã«ã—ãŸã„
         public ITerminalSession StartTerminalSession(ICommandTarget target, ITerminalParameter destination, ITerminalSettings settings) {
             IPoderosaMainWindow window = (IPoderosaMainWindow)target.GetAdapter(typeof(IPoderosaMainWindow));
             if (window == null) {
@@ -125,6 +127,15 @@ namespace Poderosa.Sessions {
                 window = (IPoderosaMainWindow)view.ParentForm.GetAdapter(typeof(IPoderosaMainWindow));
             }
             Debug.Assert(window != null);
+
+            // Adjust terminal paramters
+            IPoderosaView view1 = ToPoderosaView(target);
+            Debug.Assert(view1 != null);
+
+            TerminalControl tc = (TerminalControl)view1.GetAdapter(typeof(TerminalControl));
+            Size sz = tc.CalcTerminalSize(tc.GetRenderProfile());
+            destination.SetTerminalSize(sz.Width, sz.Height);
+
 
             ITerminalConnection connection = OpenConnection(window, destination, settings);
             if (connection == null)
@@ -135,17 +146,17 @@ namespace Poderosa.Sessions {
         }
 
         public ITerminalConnection OpenConnection(IPoderosaMainWindow owner, ITerminalParameter destination, ITerminalSettings settings) {
-            //NOTE “¯Ú‘±”ƒ`ƒFƒbƒN‚ ‚½‚è‚ ‚Á‚Ä‚à‚¢‚¢
+            //NOTE åŒæ™‚æ¥ç¶šæ•°ãƒã‚§ãƒƒã‚¯ã‚ãŸã‚Šã‚ã£ã¦ã‚‚ã„ã„
 
             ITerminalConnectionFactory[] fs = (ITerminalConnectionFactory[])TerminalSessionsPlugin.Instance.PoderosaWorld.PluginManager.FindExtensionPoint(TerminalSessionsPlugin.TERMINAL_CONNECTION_FACTORY_ID).GetExtensions();
-            //Œã‚É“o˜^‚³‚ê‚½‚â‚Â‚ğ—Dæ‚·‚é‚½‚ßA‹t‡‚Éär‚ß‚é
+            //å¾Œã«ç™»éŒ²ã•ã‚ŒãŸã‚„ã¤ã‚’å„ªå…ˆã™ã‚‹ãŸã‚ã€é€†é †ã«èˆã‚ã‚‹
             for (int i = fs.Length - 1; i >= 0; i--) {
                 ITerminalConnectionFactory f = fs[i];
                 if (f.IsSupporting(destination, settings)) {
                     return f.EstablishConnection(owner, destination, settings);
                 }
             }
-            throw new ArgumentException("Failed to make an ITerminalConnection using extension point."); //‚Ü‚µ‚ÈƒGƒ‰[ƒƒbƒZ[ƒW
+            throw new ArgumentException("Failed to make an ITerminalConnection using extension point."); //ã¾ã—ãªã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
         }
 
         public void OpenShortcutFile(ICommandTarget target, string filename) {
@@ -174,7 +185,7 @@ namespace Poderosa.Sessions {
             public bool IsSupporting(ITerminalParameter param, ITerminalSettings settings) {
                 ITCPParameter tcp = (ITCPParameter)param.GetAdapter(typeof(ITCPParameter));
                 ISSHLoginParameter ssh = (ISSHLoginParameter)param.GetAdapter(typeof(ISSHLoginParameter));
-                return tcp != null && ssh == null; //SSH‚È‚çSSH‚ğg‚¤B
+                return tcp != null && ssh == null; //SSHãªã‚‰SSHã‚’ä½¿ã†ã€‚
             }
             public ITerminalConnection EstablishConnection(IPoderosaMainWindow window, ITerminalParameter destination, ITerminalSettings settings) {
                 ITCPParameter tcp = (ITCPParameter)destination.GetAdapter(typeof(ITCPParameter));
@@ -195,7 +206,7 @@ namespace Poderosa.Sessions {
             }
             public ITerminalConnection EstablishConnection(IPoderosaMainWindow window, ITerminalParameter destination, ITerminalSettings settings) {
                 ISSHLoginParameter ssh = (ISSHLoginParameter)destination.GetAdapter(typeof(ISSHLoginParameter));
-                if (ssh.LetUserInputPassword && ssh.AuthenticationType != Granados.AuthenticationType.KeyboardInteractive) { //ƒ_ƒCƒAƒƒO‚Å“ü—Í‚ğ‘£‚µ‚ÄÚ‘±
+                if (ssh.LetUserInputPassword && ssh.AuthenticationType != Granados.AuthenticationType.KeyboardInteractive) { //ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã§å…¥åŠ›ã‚’ä¿ƒã—ã¦æ¥ç¶š
                     SSHShortcutLoginDialog dlg = new SSHShortcutLoginDialog(window, ssh, settings);
                     if (dlg.ShowDialog(window.AsForm()) == DialogResult.OK) {
                         ITerminalConnection con = dlg.Result;
@@ -205,12 +216,12 @@ namespace Poderosa.Sessions {
                     else
                         return null;
                 }
-                else { //å‚ÉReproduce‚âƒ}ƒNƒBİ’èÏ‚İ‚ÌƒpƒXƒ[ƒh‚ÅÚ‘±
+                else { //ä¸»ã«Reproduceã‚„ãƒã‚¯ãƒ­ã€‚è¨­å®šæ¸ˆã¿ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã§æ¥ç¶š
                     IProtocolService protocolservice = TerminalSessionsPlugin.Instance.ProtocolService;
                     ISynchronizedConnector conn = protocolservice.CreateFormBasedSynchronozedConnector(window);
                     IInterruptable r = protocolservice.AsyncSSHConnect(conn.InterruptableConnectorClient, ssh);
                     AdjustCaptionAndText(settings, ((ITCPParameter)destination.GetAdapter(typeof(ITCPParameter))).Destination, StartCommandIcon.NewConnection);
-                    return conn.WaitConnection(r, TerminalSessionsPlugin.Instance.TerminalSessionOptions.TerminalEstablishTimeout); //ŠÔH
+                    return conn.WaitConnection(r, TerminalSessionsPlugin.Instance.TerminalSessionOptions.TerminalEstablishTimeout); //æ™‚é–“ï¼Ÿ
                 }
             }
         }
@@ -219,7 +230,7 @@ namespace Poderosa.Sessions {
         private static void AdjustCaptionAndText(ITerminalSettings terminal_settings, string caption, StartCommandIcon icon) {
             terminal_settings.BeginUpdate();
             if (terminal_settings.Caption == null || terminal_settings.Caption.Length == 0)
-                terminal_settings.Caption = caption; //’·‚³‚O‚Í‚¢‚©‚ñ
+                terminal_settings.Caption = caption; //é•·ã•ï¼ã¯ã„ã‹ã‚“
             if (terminal_settings.Icon == null) {
                 switch (icon) {
                     case StartCommandIcon.NewConnection:

@@ -93,7 +93,7 @@ namespace Poderosa.View {
         public void Test1() {
             RenderProfile prof1 = new RenderProfile();
             prof1.FontName = "console";
-            prof1.JapaneseFontName = "‚l‚r ƒSƒVƒbƒN";
+            prof1.JapaneseFontName = "ä¿µä¿½ åƒ‘åƒ”åƒ¢åƒ‹";
             prof1.UseClearType = true;
             prof1.FontSize = 12;
             prof1.BackColor = Color.FromKnownColor(KnownColor.Yellow);
@@ -104,7 +104,7 @@ namespace Poderosa.View {
             prof1.ESColorSet[1] = Color.Pink;
 
             StructuredText storage = _renderProfileSerializer.Serialize(prof1);
-            //Šm”F
+            //å¦‹æ“£
             StringWriter wr = new StringWriter();
             new TextStructuredTextWriter(wr).Write(storage);
             wr.Close();

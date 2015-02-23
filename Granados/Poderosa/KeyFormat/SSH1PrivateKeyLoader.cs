@@ -70,7 +70,7 @@ namespace Granados.Poderosa.KeyFormat {
             publicExponent = reader.ReadMPInt();
             byte[] comment = reader.ReadString();
             byte[] prvt = reader.ReadAll();
-            //•K—v‚È‚ç•œ†
+            //å¿…è¦ãªã‚‰å¾©å·
             CipherAlgorithm algo = (CipherAlgorithm)cipher[1];
             if (algo != 0) {
                 Cipher c = CipherFactory.CreateCipher(SSHProtocol.SSH1, algo, SSH1PassphraseToKey(passphrase));

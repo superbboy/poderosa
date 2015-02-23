@@ -98,7 +98,7 @@ namespace Poderosa.Usability {
             return CommandResult.Succeeded;
         }
 
-        //CommandTarget‚©‚çTerminalSession‚ğ“¾‚é
+        //CommandTargetã‹ã‚‰TerminalSessionã‚’å¾—ã‚‹
         public static ITerminalSession AsTerminalSession(ICommandTarget target) {
             IPoderosaDocument document = CommandTargetUtil.AsDocumentOrViewOrLastActivatedDocument(target);
             if (document == null)

@@ -28,18 +28,19 @@ namespace Poderosa.Usability {
     internal class MRUPlugin : PluginBase {
         public const string PLUGIN_ID = "org.poderosa.usability.mru";
 
-        public static MRUPlugin Instance;
+        public static MRUPlugin _instance;
         private MRUList _mruList;
         private OpenMRUCommand _mruCommand;
         private ICoreServices _coreServices;
         private IProtocolService _protocolService;
         private ITerminalSessionsService _terminalSessionsService;
         private MRUOptionsSupplier _optionSupplier;
+        private StringResource _stringResource;
 
         public override void InitializePlugin(IPoderosaWorld poderosa) {
             base.InitializePlugin(poderosa);
 
-            Instance = this;
+            _instance = this;
 
             IPluginManager pm = poderosa.PluginManager;
             _optionSupplier = new MRUOptionsSupplier();
@@ -49,7 +50,10 @@ namespace Poderosa.Usability {
             _protocolService = (IProtocolService)pm.FindPlugin("org.poderosa.protocols", typeof(IProtocolService));
             _terminalSessionsService = (ITerminalSessionsService)pm.FindPlugin("org.poderosa.terminalsessions", typeof(ITerminalSessionsService));
 
-            //Ú‘±¬Œ÷‚ÉƒŠƒXƒgXV
+            _stringResource = new StringResource("Poderosa.Usability.strings", typeof(MRUPlugin).Assembly);
+            _instance.PoderosaWorld.Culture.AddChangeListener(_stringResource);
+
+            //æ¥ç¶šæˆåŠŸæ™‚ã«ãƒªã‚¹ãƒˆæ›´æ–°
             _mruList = new MRUList(this, pm);
             _coreServices.SessionManager.AddSessionListener(_mruList);
             pm.FindExtensionPoint("org.poderosa.menu.file").RegisterExtension(_mruList);
@@ -57,6 +61,14 @@ namespace Poderosa.Usability {
             pm.FindExtensionPoint("org.poderosa.terminalsessions.loginDialogUISupport").RegisterExtension(_mruList);
 
             _mruCommand = new OpenMRUCommand();
+        }
+
+        public static MRUPlugin Instance
+        {
+            get
+            {
+                return _instance;
+            }
         }
 
         public OpenMRUCommand OpenMRUCommand {
@@ -90,33 +102,17 @@ namespace Poderosa.Usability {
             }
         }
 
-        #region IPreferenceSupplier
-        public string ID {
-            get {
-                return PLUGIN_ID;
-            }
-        }
-
-        public void InitializePreference(IPreferenceBuilder builder, IPreferenceFolder folder) {
-            IIntPreferenceItem limitCount = builder.DefineIntValue(folder, "limitcount", 5, PreferenceValidatorUtil.PositiveIntegerValidator); //ãŒÀ’l
-            builder.DefineLooseNode(folder, _mruList, "list");
-        }
-
-        public object QueryAdapter(IPreferenceFolder folder, Type type) {
-            return null;
-        }
-
-        public string GetDescription(IPreferenceItem item) {
-            return "MRU";
-        }
-
-        public void ValidateFolder(IPreferenceFolder folder, IPreferenceValidationResult output) {
-        }
-        #endregion
-
         public MRUList MRUList {
             get {
                 return _mruList;
+            }
+        }
+
+        public StringResource Strings
+        {
+            get
+            {
+                return _stringResource;
             }
         }
     }
@@ -124,7 +120,7 @@ namespace Poderosa.Usability {
 
     /// <summary>
     /// <ja>
-    /// MRUiMost Recently UsedFÅ‹ßg‚Á‚½‚à‚Ìj‚ÌƒIƒvƒVƒ‡ƒ“‚ğİ’è‚·‚éƒCƒ“ƒ^[ƒtƒFƒCƒX‚Å‚·B
+    /// MRUï¼ˆMost Recently Usedï¼šæœ€è¿‘ä½¿ã£ãŸã‚‚ã®ï¼‰ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¨­å®šã™ã‚‹ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã§ã™ã€‚
     /// </ja>
     /// <en>
     /// It is an interface that sets the option of MRU (Most Recently Used).
@@ -132,7 +128,7 @@ namespace Poderosa.Usability {
     /// </summary>
     public interface IMRUOptions {
         /// <summary>
-        /// <ja>•Û‚·‚é—š—ğ”‚Å‚·B</ja>
+        /// <ja>ä¿æŒã™ã‚‹å±¥æ­´æ•°ã§ã™ã€‚</ja>
         /// <en>Maintained number of histories</en>
         /// </summary>
         int LimitCount {
@@ -144,7 +140,7 @@ namespace Poderosa.Usability {
     internal class MRUItem : IAdaptable {
         private ITerminalParameter _terminalParam;
         private ITerminalSettings _terminalSettings;
-        private StructuredText _lateBindContent; //‚±‚ê‚ªnull‚Å‚È‚¢‚Æ‚«‚Í’x‰„ƒ[ƒh‚Ì•K—v‚ ‚è
+        private StructuredText _lateBindContent; //ã“ã‚ŒãŒnullã§ãªã„ã¨ãã¯é…å»¶ãƒ­ãƒ¼ãƒ‰ã®å¿…è¦ã‚ã‚Š
 
         public MRUItem(ITerminalSession ts) {
             _terminalParam = ts.TerminalTransmission.Connection.Destination;
@@ -176,7 +172,7 @@ namespace Poderosa.Usability {
         }
         public void IsolateSettings() {
             AssureContent();
-            //TerminalParam, Settings‚»‚ê‚¼‚ê‚ÅƒNƒ[ƒ“‚ğ‚Â‚æ‚¤‚É•Ï‰»‚³‚¹‚é
+            //TerminalParam, Settingsãã‚Œãã‚Œã§ã‚¯ãƒ­ãƒ¼ãƒ³ã‚’æŒã¤ã‚ˆã†ã«å¤‰åŒ–ã•ã›ã‚‹
             _terminalParam = (ITerminalParameter)_terminalParam.Clone();
             _terminalSettings = _terminalSettings.Clone();
         }
@@ -186,10 +182,10 @@ namespace Poderosa.Usability {
                 return;
 
             MRUItem temp = MRUItemSerializer.Instance.Deserialize(_lateBindContent) as MRUItem;
-            Debug.Assert(temp != null); //Œ^ƒ`ƒFƒbƒN‚­‚ç‚¢‚Íƒ[ƒh‚É‚µ‚Ä‚¢‚é
+            Debug.Assert(temp != null); //å‹ãƒã‚§ãƒƒã‚¯ãã‚‰ã„ã¯ãƒ­ãƒ¼ãƒ‰æ™‚ã«ã—ã¦ã„ã‚‹
             _terminalParam = temp._terminalParam;
             _terminalSettings = temp._terminalSettings;
-            _lateBindContent = null; //‚±‚ê‚Å’x‰„‚·‚é
+            _lateBindContent = null; //ã“ã‚Œã§é…å»¶ã™ã‚‹
         }
 
         public IAdaptable GetAdapter(Type adapter) {
@@ -230,7 +226,7 @@ namespace Poderosa.Usability {
         }
 
         public object Deserialize(StructuredText node) {
-            //TODO ƒGƒ‰[ƒnƒ“ƒhƒŠƒ“ƒOã‚¢
+            //TODO ã‚¨ãƒ©ãƒ¼ãƒãƒ³ãƒ‰ãƒªãƒ³ã‚°å¼±ã„
             if (node.ChildCount != 2)
                 return null;
             return new MRUItem(
@@ -249,13 +245,18 @@ namespace Poderosa.Usability {
         ITelnetSSHLoginDialogInitializer,
         ILoginDialogUISupport {
         private MRUItemSerializer _serializer;
-        private OrderedCollection<MRUItem> _data; //æ“ª‚É‚ ‚é‚â‚Â‚Ù‚Çæ‚ÉÚ‘±‚µ‚½‚à‚Ì‚Æ‚İ‚È‚·
+        private OrderedCollection<MRUItem> _data; //å…ˆé ­ã«ã‚ã‚‹ã‚„ã¤ã»ã©å…ˆã«æ¥ç¶šã—ãŸã‚‚ã®ã¨ã¿ãªã™
         private MRUPlugin _parent;
+        private static MRUList _instance;
+        private OrderedCollection<String> _groups;
 
-        public MRUList(MRUPlugin parent, IPluginManager pm) {
+        public MRUList(MRUPlugin parent, IPluginManager pm)
+        {
+            _instance = this;
             _parent = parent;
             _serializer = new MRUItemSerializer(pm);
             _data = new OrderedCollection<MRUItem>(MRUItemEquality);
+            _groups = new OrderedCollection<String>(MRUFolderEquality);
         }
 
         #region ISessionListener
@@ -268,11 +269,13 @@ namespace Poderosa.Usability {
                 return;
             }
 
-            _data.Update(new MRUItem(ts));
+            MRUItem mruitem = new MRUItem(ts);
+            _data.Update(mruitem);
+            _groups.Update(mruitem.TerminalSettings.Group);
             int limit = MRUPlugin.Instance.OptionSupplier.OriginalOptions.LimitCount;
             _data.LimitCount(limit);
 
-            ////Volatile‚É‚·‚é‚©‚í‚è‚ÉReloadƒXƒ^ƒCƒ‹
+            ////Volatileã«ã™ã‚‹ã‹ã‚ã‚Šã«Reloadã‚¹ã‚¿ã‚¤ãƒ«
             //MRUPlugin.Instance.WindowManager.ReloadMenu("org.poderosa.menu.file");
         }
 
@@ -288,19 +291,26 @@ namespace Poderosa.Usability {
         #region IPreferenceLooseNodeContent
         public void Reset() {
             _data.Clear();
+            _groups.Clear();
         }
         public IPreferenceLooseNodeContent Clone() {
-            return this; //TODO ‚³‚Ú‚èB¡‚ÍƒRƒs[‚É‘Î‚µ‚Ä•ÒW‚·‚é‚æ‚¤‚È‚±‚Æ‚ª‚È‚¢‚Ì‚Å‚±‚ê‚Å‚à\‚í‚È‚¢‚ª
+            return this; //TODO ã•ã¼ã‚Šã€‚ä»Šã¯ã‚³ãƒ”ãƒ¼ã«å¯¾ã—ã¦ç·¨é›†ã™ã‚‹ã‚ˆã†ãªã“ã¨ãŒãªã„ã®ã§ã“ã‚Œã§ã‚‚æ§‹ã‚ãªã„ãŒ
         }
 
         public void LoadFrom(StructuredText node) {
             _data.Clear();
+            _groups.Clear();
             string classname = typeof(MRUItem).FullName;
             foreach (StructuredText item in node.Children) {
                 try {
-                    //‹N“®‚‘¬‰»‚Ì‚½‚ß’x‰„ƒfƒVƒŠƒAƒ‰ƒCƒY
+                    //èµ·å‹•é«˜é€ŸåŒ–ã®ãŸã‚é…å»¶ãƒ‡ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚º
                     if (item.Name == classname) {
-                        _data.Add(new MRUItem(item));
+                        MRUItem mruitem = new MRUItem(item);
+                        _data.Add(mruitem);
+                        if (mruitem.TerminalSettings.Group.Length > 0)
+                        {
+                            _groups.Update(mruitem.TerminalSettings.Group);
+                        }
                     }
                 }
                 catch (Exception ex) {
@@ -322,20 +332,26 @@ namespace Poderosa.Usability {
         #endregion
 
         #region IPoderosaMenuGroup
-        public IPoderosaMenu[] ChildMenus {
-            get {
+        public IPoderosaMenu[] ChildMenus
+        {
+            get
+            {
                 return CreateMenus();
             }
         }
 
-        public bool IsVolatileContent {
-            get {
+        public bool IsVolatileContent
+        {
+            get
+            {
                 return true;
             }
         }
 
-        public bool ShowSeparator {
-            get {
+        public bool ShowSeparator
+        {
+            get
+            {
                 return true;
             }
         }
@@ -369,6 +385,7 @@ namespace Poderosa.Usability {
                 ITCPParameter tcp = (ITCPParameter)tp.GetAdapter(typeof(ITCPParameter));
                 ISSHLoginParameter ssh = (ISSHLoginParameter)tp.GetAdapter(typeof(ISSHLoginParameter));
                 ICygwinParameter cygwin = (ICygwinParameter)tp.GetAdapter(typeof(ICygwinParameter));
+                ITerminalSettings ts = item.TerminalSettings;
                 if (tcp != null)
                     info.AddHost(tcp.Destination);
                 if (tcp != null)
@@ -377,6 +394,7 @@ namespace Poderosa.Usability {
                     info.AddIdentityFile(ssh.IdentityFileName);
                 if (ssh != null)
                     info.AddAccount(ssh.Account);
+                info.AddGroup(ts.Group);
             }
         }
 
@@ -394,7 +412,7 @@ namespace Poderosa.Usability {
             foreach (MRUItem item in _data) {
                 ITerminalParameter tp = item.TerminalParameter;
                 if (tp.GetAdapter(adapter) != null) {
-                    if (CheckDestination(item.TerminalParameter, destination)) { //Œ©‚Â‚©‚Á‚½
+                    if (CheckDestination(item.TerminalParameter, destination)) { //è¦‹ã¤ã‹ã£ãŸ
                         parameter = item.TerminalParameter;
                         settings = item.TerminalSettings;
                         return;
@@ -406,7 +424,7 @@ namespace Poderosa.Usability {
             settings = null;
         }
         private static bool CheckDestination(ITerminalParameter tp, string destination) {
-            //destination‚ªnull(FillTop()—R—ˆ)‚È‚çí‚ÉOK
+            //destinationãŒnull(FillTop()ç”±æ¥)ãªã‚‰å¸¸ã«OK
             if (destination == null)
                 return true;
             ITCPParameter tcp = (ITCPParameter)tp.GetAdapter(typeof(ITCPParameter));
@@ -419,19 +437,189 @@ namespace Poderosa.Usability {
         #endregion
 
         private bool MRUItemEquality(MRUItem item1, MRUItem item2) {
-            ITerminalParameter p1 = item1.TerminalParameter;
-            ITerminalParameter p2 = item2.TerminalParameter;
-
-            return p1.UIEquals(p2);
+            // using caption & group as key
+            ITerminalSettings ts1 = item1.TerminalSettings;
+            ITerminalSettings ts2 = item2.TerminalSettings;
+            return ((ts1.Group == ts2.Group) && (ts1.Caption == ts2.Caption));
         }
 
+        private bool MRUFolderEquality(String item1, String item2)
+        {
+            return item1 == item2;
+        }
+
+
+        public static MRUList Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+        public OrderedCollection<MRUItem> Data
+        {
+            get
+            {
+                return _data;
+            }
+        }
+
+        public OrderedCollection<String> Group
+        {
+            get
+            {
+                return _groups;
+            }
+        }
+
+        private class MRUTopMenu : IPoderosaMenuGroup
+        {
+            public IPoderosaMenu[] ChildMenus
+            {
+                get
+                {
+                    List<IPoderosaMenuFolder> t = new List<IPoderosaMenuFolder>();
+                    foreach (String group in MRUList.Instance.Group)
+                    {
+                        t.Add(new MRUGroupMenuFolder(group));
+                    }
+                    return t.ToArray();
+                }
+            }
+
+            public bool IsVolatileContent
+            {
+                get
+                {
+                    return true;
+                }
+            }
+
+            public bool ShowSeparator
+            {
+                get
+                {
+                    return true;
+                }
+            }
+
+            public IAdaptable GetAdapter(Type adapter)
+            {
+                return MRUPlugin.Instance.PoderosaWorld.AdapterManager.GetAdapter(this, adapter);
+            }
+        }
+
+        private class MRUGroupMenuFolder : IPoderosaMenuFolder
+        {
+            private String _group;
+            private IPoderosaMenuGroup[] _childGroups;
+            public MRUGroupMenuFolder(String group)
+            {
+                _group = group;
+                _childGroups = new IPoderosaMenuGroup[] {
+                    new MRUItemsMenuGroup(_group)
+                };
+            }
+
+            public IPoderosaMenuGroup[] ChildGroups
+            {
+                get
+                {
+                    return _childGroups;
+                }
+            }
+
+            public string Text
+            {
+                get
+                {
+                    return _group;
+                }
+            }
+
+            public bool IsEnabled(ICommandTarget target)
+            {
+                return true;
+            }
+
+            public bool IsChecked(ICommandTarget target)
+            {
+                return false;
+            }
+
+            public IAdaptable GetAdapter(Type adapter)
+            {
+                return MRUPlugin.Instance.PoderosaWorld.AdapterManager.GetAdapter(this, adapter);
+            }
+        }
+
+        //å€‹ã€…ã®ãƒã‚¯ãƒ­ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’è¨˜è¿°
+        private class MRUItemsMenuGroup : IPoderosaMenuGroup
+        {
+            private String _group;
+            public MRUItemsMenuGroup(String group)
+            {
+                _group = group;
+            }
+            public IPoderosaMenu[] ChildMenus
+            {
+                get
+                {
+                    List<IPoderosaMenuItem > t = new List<IPoderosaMenuItem>();
+                    int index = 0;
+                    foreach (MRUItem item in MRUList.Instance.Data)
+                    {
+                        if (item.TerminalSettings.Group == _group)
+                        {
+                            t.Add(new MRUMenuItem(index++, item));
+                        }
+                    }
+                    return t.ToArray();
+                }
+            }
+
+            public bool IsVolatileContent
+            {
+                get
+                {
+                    return true;
+                }
+            }
+
+            public bool ShowSeparator
+            {
+                get
+                {
+                    return true;
+                }
+            }
+
+            public IAdaptable GetAdapter(Type adapter)
+            {
+                return MRUPlugin.Instance.PoderosaWorld.AdapterManager.GetAdapter(this, adapter);
+            }
+        }
+
+        private IPoderosaMenuFolder[] CreateMenus()
+        {
+            List<IPoderosaMenuFolder> t = new List<IPoderosaMenuFolder>();
+            foreach (String group in _groups)
+            {
+                t.Add(new MRUGroupMenuFolder(group));
+            }
+            return t.ToArray();
+        }
+
+        /*
         private IPoderosaMenuItem[] CreateMenus() {
             List<IPoderosaMenuItem> t = new List<IPoderosaMenuItem>();
             int index = 0;
             foreach (MRUItem item in _data)
+                
                 t.Add(new MRUMenuItem(index++, item));
             return t.ToArray();
         }
+         */
 
         private class MRUMenuItem : IPoderosaMenuItemWithArgs {
 
@@ -508,20 +696,21 @@ namespace Poderosa.Usability {
 
     }
 
-    //‚±‚ê‚ÍƒVƒ‡[ƒgƒJƒbƒgƒL[‚ª‚ ‚é‚í‚¯‚Å‚Í‚È‚¢‚Ì‚Å–³Œø
+    //ã“ã‚Œã¯ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆã‚­ãƒ¼ãŒã‚ã‚‹ã‚ã‘ã§ã¯ãªã„ã®ã§ç„¡åŠ¹
     internal class OpenMRUCommand : IPoderosaCommand {
         public CommandResult InternalExecute(ICommandTarget target, params IAdaptable[] args) {
             Debug.Assert(args != null && args.Length == 1);
             MRUItem item = (MRUItem)args[0].GetAdapter(typeof(MRUItem));
 
-            //ƒRƒ}ƒ“ƒhÀs“_‚ÅIsolate‚·‚éB
-            //‚È‚º‚È‚çATerminalSettings‚ÍSession‚²‚Æ‚ÉƒRƒs[‚ğ‚½‚È‚¢‚Æ‚¢‚¯‚È‚¢iƒZƒbƒVƒ‡ƒ“ŠÔ‚Ì‹¤—L‚ÍNGj‚µA
-            //‚µ‚©‚µSetting‚ğÚ‘±Œã‚É•ÏX‚µ‚½‚ç‚»‚ê‚Í•Û‘¶‚·‚éMRU‚É”½‰f‚µ‚½‚¢B
-            //Œ‹‰Ê‚Æ‚µ‚ÄA“¯‚¶MRUItem‚ğ•¡”‰ñƒCƒ“ƒXƒ^ƒ“ƒVƒG[ƒg‚µ‚½‚çAÅŒã‚ÉŠJ‚¢‚½Ú‘±‚ÌTerminalSettings‚ªMRUƒf[ƒ^‚Æ‚µ‚Ä•Û‘¶‚³‚ê‚éB
+            //ã‚³ãƒãƒ³ãƒ‰å®Ÿè¡Œæ™‚ç‚¹ã§Isolateã™ã‚‹ã€‚
+            //ãªãœãªã‚‰ã€TerminalSettingsã¯Sessionã”ã¨ã«ã‚³ãƒ”ãƒ¼ã‚’æŒãŸãªã„ã¨ã„ã‘ãªã„ï¼ˆã‚»ãƒƒã‚·ãƒ§ãƒ³é–“ã®å…±æœ‰ã¯NGï¼‰ã—ã€
+            //ã—ã‹ã—Settingã‚’æ¥ç¶šå¾Œã«å¤‰æ›´ã—ãŸã‚‰ãã‚Œã¯ä¿å­˜ã™ã‚‹MRUã«åæ˜ ã—ãŸã„ã€‚
+            //çµæœã¨ã—ã¦ã€åŒã˜MRUItemã‚’è¤‡æ•°å›ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚·ã‚¨ãƒ¼ãƒˆã—ãŸã‚‰ã€æœ€å¾Œã«é–‹ã„ãŸæ¥ç¶šã®TerminalSettingsãŒMRUãƒ‡ãƒ¼ã‚¿ã¨ã—ã¦ä¿å­˜ã•ã‚Œã‚‹ã€‚
             item.IsolateSettings();
             ISSHLoginParameter ssh = (ISSHLoginParameter)item.TerminalParameter.GetAdapter(typeof(ISSHLoginParameter));
-            if (ssh != null)
-                ssh.PasswordOrPassphrase = ""; //MRU‚©‚ç‚ÌSSH‹N“®‚ÍƒpƒXƒ[ƒh“ü—Í‚ÍŠO‚¹‚È‚¢BƒIƒvƒVƒ‡ƒ“‚ÅÈ—ª‰»‚É‚µ‚Ä‚à‚¢‚¢‚ª
+
+            //if (ssh != null)
+            //    ssh.PasswordOrPassphrase = ""; //MRUã‹ã‚‰ã®SSHèµ·å‹•ã¯ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰å…¥åŠ›ã¯å¤–ã›ãªã„ã€‚ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã§çœç•¥åŒ–ã«ã—ã¦ã‚‚ã„ã„ãŒ
 
             ITerminalSession ts = MRUPlugin.Instance.TerminalSessionsService.TerminalSessionStartCommand.StartTerminalSession(target, item.TerminalParameter, item.TerminalSettings);
             return ts != null ? CommandResult.Succeeded : CommandResult.Failed;
@@ -537,7 +726,7 @@ namespace Poderosa.Usability {
     }
 
 
-    //MRUãŒÀƒTƒCƒYİ’è
+    //MRUä¸Šé™ã‚µã‚¤ã‚ºè¨­å®š
     internal class MRUOptions : SnapshotAwarePreferenceBase, IMRUOptions {
         private IIntPreferenceItem _limitCount;
 
@@ -549,7 +738,7 @@ namespace Poderosa.Usability {
             _limitCount = builder.DefineIntValue(_folder, "limitCount", 5,
                 delegate(int value, IPreferenceValidationResult result) {
                     if (value < 0 || value > 100)
-                        result.ErrorMessage = "MRU LimitCount Error"; //‚±‚ê‚¿‚á‚ñ‚ÆŒÄ‚Î‚ê‚é‚©‚È
+                        result.ErrorMessage = "MRU LimitCount Error"; //ã“ã‚Œã¡ã‚ƒã‚“ã¨å‘¼ã°ã‚Œã‚‹ã‹ãª
                 });
 
         }
@@ -579,7 +768,7 @@ namespace Poderosa.Usability {
 
         public string PreferenceID {
             get {
-                return MRUPlugin.PLUGIN_ID; //“¯‚¶‚Æ‚·‚é
+                return MRUPlugin.PLUGIN_ID; //åŒã˜ã¨ã™ã‚‹
             }
         }
 

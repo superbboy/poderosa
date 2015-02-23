@@ -19,9 +19,9 @@ using Poderosa.Util;
 
 namespace Poderosa.Terminal {
 
-    //�J��グ�Ď������邱�Ƃɂ����A�L�[�̊����̂��߂̃N���X�B
-    //�T�^�I�ɂ́A�Ⴆ�� 0x1F�̑��M�� Ctrl+_ �����A�p��L�[�{�[�h�ł͎��ۂɂ� Ctrl+Shift+- ���K�v�ł���A�����Â炢�B���̂��������������B
-    //���łɁA������ɑ΂��ăo�C���h���\�ɂ���΁A"ls -la"�L�[�݂����Ȃ̂��`�ł���B
+    //繰り上げて実装することにした、キーの割当のためのクラス。
+    //典型的には、例えば 0x1Fの送信は Ctrl+_ だが、英語キーボードでは実際には Ctrl+Shift+- が必要であり、押しづらい。このあたりを解決する。
+    //ついでに、文字列に対してバインドを可能にすれば、"ls -la"キーみたいなのを定義できる。
     /// <summary>
     /// 
     /// </summary>
@@ -51,11 +51,11 @@ namespace Poderosa.Terminal {
                 _data = data;
             }
 
-            //0x�`�����܂߂Ĉ�����悤��
+            //0x形式も含めて扱えるように
             public string FormatData() {
                 StringBuilder bld = new StringBuilder();
                 foreach (char ch in _data) {
-                    if (ch < ' ' || (int)ch == 0x7F) { //���䕶����del
+                    if (ch < ' ' || (int)ch == 0x7F) { //制御文字とdel
                         bld.Append("0x");
                         bld.Append(((int)ch).ToString("X2"));
                     }
@@ -70,7 +70,7 @@ namespace Poderosa.Terminal {
                 int c = 0;
                 while (c < s.Length) {
                     char ch = s[c];
-                    if (ch == '0' && c + 3 <= s.Length && s[c + 1] == 'x') { //0x00�`���B
+                    if (ch == '0' && c + 3 <= s.Length && s[c + 1] == 'x') { //0x00形式。
                         int t;
                         if (Int32.TryParse(s.Substring(c + 2, 2), NumberStyles.HexNumber, null, out t)) {
                             bld.Append((char)t);

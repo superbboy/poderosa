@@ -41,8 +41,8 @@ namespace Poderosa.Executable {
 
         private static void Init() {
             RenderProfile rp = GEnv.Options.CreateRenderProfile();
-            rp.FontName = "‚l‚r ƒSƒVƒbƒN";
-            rp.JapaneseFontName = "‚l‚r ƒSƒVƒbƒN";
+            rp.FontName = "ä¿µä¿½ åƒ‘åƒ”åƒ¢åƒ‹";
+            rp.JapaneseFontName = "ä¿µä¿½ åƒ‘åƒ”åƒ¢åƒ‹";
             rp.BackColor = Color.White;
             rp.ForeColor = Color.Black;
             GEnv.DefaultRenderProfile = rp;

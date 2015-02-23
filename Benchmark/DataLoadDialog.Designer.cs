@@ -1,4 +1,4 @@
-﻿namespace Poderosa.Benchmark {
+namespace Poderosa.Benchmark {
     partial class DataLoadDialog {
         /// <summary>
         /// 必要なデザイナ変数です。

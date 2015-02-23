@@ -13,7 +13,7 @@ using System.Text;
 namespace Poderosa {
     /// <summary>
     /// <ja>
-    /// ƒo[ƒWƒ‡ƒ“î•ñ‚ð•Ô‚µ‚Ü‚·B
+    /// ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±ã‚’è¿”ã—ã¾ã™ã€‚
     /// </ja>
     /// <en>
     /// Return the version information.
@@ -23,16 +23,16 @@ namespace Poderosa {
     public class VersionInfo {
         /// <summary>
         /// <ja>
-        /// ƒo[ƒWƒ‡ƒ“”Ô†‚Å‚·B
+        /// ãƒãƒ¼ã‚¸ãƒ§ãƒ³ç•ªå·ã§ã™ã€‚
         /// </ja>
         /// <en>
         /// Version number.
         /// </en>
         /// </summary>
-        public const string PODEROSA_VERSION = "4.3.10b";
+        public const string PODEROSA_VERSION = "4.3.11b";
         /// <summary>
         /// <ja>
-        /// ƒŠƒŠ[ƒX“ú‚Å‚·B
+        /// ãƒªãƒªãƒ¼ã‚¹æ—¥ã§ã™ã€‚
         /// </ja>
         /// <en>
         /// Release Date.
@@ -41,7 +41,7 @@ namespace Poderosa {
         public const string RELEASE_DATE = "Nov 22, 2006";
         /// <summary>
         /// <ja>
-        /// ƒvƒƒWƒFƒNƒg–¼‚Å‚·B
+        /// ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆåã§ã™ã€‚
         /// </ja>
         /// <en>
         /// Project name.

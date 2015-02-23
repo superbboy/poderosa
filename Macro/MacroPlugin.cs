@@ -226,7 +226,7 @@ namespace Poderosa.MacroInternal {
             }
         }
 
-        //個々のマクロのアイテムを記述
+        //蛟九�縺ｮ繝槭け繝ｭ縺ｮ繧｢繧､繝�繝繧定ｨ倩ｿｰ
         private class MacroItemsMenuGroup : IPoderosaMenuGroup {
             public IPoderosaMenu[] ChildMenus {
                 get {

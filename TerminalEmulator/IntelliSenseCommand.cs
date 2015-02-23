@@ -121,7 +121,7 @@ namespace Poderosa.Terminal {
             return TerminalEmulatorPlugin.Instance.PoderosaWorld.AdapterManager.GetAdapter(this, adapter);
         }
 
-        //�q�v�f
+        //子要素
         private class SchemeMenuGroup : PoderosaMenuGroupImpl {
             public override bool IsVolatileContent {
                 get {
@@ -130,7 +130,7 @@ namespace Poderosa.Terminal {
             }
             public override IPoderosaMenu[] ChildMenus {
                 get {
-                    //TODO �X�L�[���R���N�V��������ύX�ʒm���󂯂����ゾ���č쐬����Ό����͂悢
+                    //TODO スキームコレクションから変更通知を受けた直後だけ再作成すれば効率はよい
                     Debug.WriteLineIf(DebugOpt.IntelliSenseMenu, "Building intellisense menu");
                     TerminalEmulatorPlugin.Instance.LaterInitialize();
                     IShellSchemeCollection sc = TerminalEmulatorPlugin.Instance.ShellSchemeCollection;

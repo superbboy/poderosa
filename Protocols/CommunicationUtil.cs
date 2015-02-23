@@ -24,7 +24,7 @@ namespace Poderosa.Protocols {
     /// </summary>
     /// <exclude/>
     public class CommunicationUtil {
-        //cygwin‚Ì“¯Šú“IÚ‘±
+        //cygwinã®åŒæœŸçš„æ¥ç¶š
         public static ITerminalConnection CreateNewLocalShellConnection(IPoderosaForm form, ICygwinParameter param) {
             return LocalShellUtil.PrepareSocket(form, param);
         }

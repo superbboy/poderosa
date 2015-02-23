@@ -44,6 +44,8 @@ namespace Poderosa.Sessions {
 
         private System.ComponentModel.Container components = null;
 
+        private System.Windows.Forms.Label _captionLabel;
+        private TextBox _captionBox;
         private System.Windows.Forms.Label _hostLabel;
         private ComboBox _hostBox;
         private System.Windows.Forms.Label _portLabel;
@@ -80,6 +82,8 @@ namespace Poderosa.Sessions {
         private Label _autoExecMacroPathLabel;
         private TextBox _autoExecMacroPathBox;
         private CheckBox _telnetNewLine;
+        private Label _groupLabel;
+        private ComboBox _groupBox;
         private Button _selectAutoExecMacroButton;
 
         public TelnetSSHLoginDialog(IPoderosaMainWindow parentWindow)
@@ -88,7 +92,7 @@ namespace Poderosa.Sessions {
             _initializing = true;
             //_history = GApp.ConnectionHistory;
             //
-            // Windows ÉtÉHÅ[ÉÄ ÉfÉUÉCÉi ÉTÉ|Å[ÉgÇ…ïKóvÇ≈Ç∑ÅB
+            // Windows „Éï„Ç©„Éº„É† „Éá„Ç∂„Ç§„Éä „Çµ„Éù„Éº„Éà„Å´ÂøÖË¶Å„Åß„Åô„ÄÇ
             //
             InitializeComponent();
             InitializeText();
@@ -97,7 +101,7 @@ namespace Poderosa.Sessions {
             _initializing = false;
         }
         /// <summary>
-        /// égópÇ≥ÇÍÇƒÇ¢ÇÈÉäÉ\Å[ÉXÇ…å„èàóùÇé¿çsÇµÇ‹Ç∑ÅB
+        /// ‰ΩøÁî®„Åï„Çå„Å¶„ÅÑ„Çã„É™„ÇΩ„Éº„Çπ„Å´ÂæåÂá¶ÁêÜ„ÇíÂÆüË°å„Åó„Åæ„Åô„ÄÇ
         /// </summary>
         protected override void Dispose(bool disposing) {
             if (disposing) {
@@ -110,8 +114,8 @@ namespace Poderosa.Sessions {
 
         #region Windows Form Designer generated code
         /// <summary>
-        /// ÉfÉUÉCÉi ÉTÉ|Å[ÉgÇ…ïKóvÇ»ÉÅÉ\ÉbÉhÇ≈Ç∑ÅBÇ±ÇÃÉÅÉ\ÉbÉhÇÃì‡óeÇ
-        /// ÉRÅ[Éh ÉGÉfÉBÉ^Ç≈ïœçXÇµÇ»Ç¢Ç≈Ç≠ÇæÇ≥Ç¢ÅB
+        /// „Éá„Ç∂„Ç§„Éä „Çµ„Éù„Éº„Éà„Å´ÂøÖË¶Å„Å™„É°„ÇΩ„ÉÉ„Éâ„Åß„Åô„ÄÇ„Åì„ÅÆ„É°„ÇΩ„ÉÉ„Éâ„ÅÆÂÜÖÂÆπ„Çí
+        /// „Ç≥„Éº„Éâ „Ç®„Éá„Ç£„Çø„ÅßÂ§âÊõ¥„Åó„Å™„ÅÑ„Åß„Åè„Å†„Åï„ÅÑ„ÄÇ
         /// </summary>
         private void InitializeComponent() {
             this._hostLabel = new System.Windows.Forms.Label();
@@ -148,6 +152,10 @@ namespace Poderosa.Sessions {
             this._autoExecMacroPathLabel = new System.Windows.Forms.Label();
             this._autoExecMacroPathBox = new System.Windows.Forms.TextBox();
             this._selectAutoExecMacroButton = new System.Windows.Forms.Button();
+            this._captionLabel = new System.Windows.Forms.Label();
+            this._captionBox = new System.Windows.Forms.TextBox();
+            this._groupLabel = new System.Windows.Forms.Label();
+            this._groupBox = new System.Windows.Forms.ComboBox();
             this._sshGroup.SuspendLayout();
             this._terminalGroup.SuspendLayout();
             this.SuspendLayout();
@@ -156,72 +164,72 @@ namespace Poderosa.Sessions {
             // 
             this._loginButton.ImageIndex = 0;
             this._loginButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._loginButton.Location = new System.Drawing.Point(160, 424);
+            this._loginButton.Location = new System.Drawing.Point(160, 515);
             this._loginButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._loginButton.Size = new System.Drawing.Size(72, 25);
+            this._loginButton.Size = new System.Drawing.Size(72, 27);
             this._loginButton.TabIndex = 11;
             // 
             // _cancelButton
             // 
             this._cancelButton.ImageIndex = 0;
             this._cancelButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._cancelButton.Location = new System.Drawing.Point(248, 424);
+            this._cancelButton.Location = new System.Drawing.Point(248, 515);
             this._cancelButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._cancelButton.Size = new System.Drawing.Size(72, 25);
+            this._cancelButton.Size = new System.Drawing.Size(72, 27);
             this._cancelButton.TabIndex = 12;
             // 
             // _hostLabel
             // 
             this._hostLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._hostLabel.Location = new System.Drawing.Point(16, 12);
+            this._hostLabel.Location = new System.Drawing.Point(16, 72);
             this._hostLabel.Name = "_hostLabel";
             this._hostLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._hostLabel.Size = new System.Drawing.Size(80, 16);
+            this._hostLabel.Size = new System.Drawing.Size(80, 17);
             this._hostLabel.TabIndex = 0;
             this._hostLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _hostBox
             // 
-            this._hostBox.Location = new System.Drawing.Point(104, 8);
+            this._hostBox.Location = new System.Drawing.Point(104, 68);
             this._hostBox.Name = "_hostBox";
-            this._hostBox.Size = new System.Drawing.Size(208, 20);
+            this._hostBox.Size = new System.Drawing.Size(208, 21);
             this._hostBox.TabIndex = 1;
             this._hostBox.SelectedIndexChanged += new System.EventHandler(this.OnHostIsSelected);
             // 
             // _methodLabel
             // 
             this._methodLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._methodLabel.Location = new System.Drawing.Point(16, 36);
+            this._methodLabel.Location = new System.Drawing.Point(16, 98);
             this._methodLabel.Name = "_methodLabel";
             this._methodLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._methodLabel.Size = new System.Drawing.Size(80, 16);
+            this._methodLabel.Size = new System.Drawing.Size(80, 17);
             this._methodLabel.TabIndex = 2;
             this._methodLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _methodBox
             // 
             this._methodBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._methodBox.Location = new System.Drawing.Point(104, 32);
+            this._methodBox.Location = new System.Drawing.Point(104, 94);
             this._methodBox.Name = "_methodBox";
-            this._methodBox.Size = new System.Drawing.Size(208, 20);
+            this._methodBox.Size = new System.Drawing.Size(208, 21);
             this._methodBox.TabIndex = 3;
             this._methodBox.SelectedIndexChanged += new System.EventHandler(this.AdjustConnectionUI);
             // 
             // _portLabel
             // 
             this._portLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._portLabel.Location = new System.Drawing.Point(16, 60);
+            this._portLabel.Location = new System.Drawing.Point(16, 124);
             this._portLabel.Name = "_portLabel";
             this._portLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._portLabel.Size = new System.Drawing.Size(80, 16);
+            this._portLabel.Size = new System.Drawing.Size(80, 17);
             this._portLabel.TabIndex = 4;
             this._portLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _portBox
             // 
-            this._portBox.Location = new System.Drawing.Point(104, 56);
+            this._portBox.Location = new System.Drawing.Point(104, 120);
             this._portBox.Name = "_portBox";
-            this._portBox.Size = new System.Drawing.Size(208, 20);
+            this._portBox.Size = new System.Drawing.Size(208, 21);
             this._portBox.TabIndex = 5;
             // 
             // _sshGroup
@@ -236,81 +244,81 @@ namespace Poderosa.Sessions {
             this._sshGroup.Controls.Add(this._privateKeyFile);
             this._sshGroup.Controls.Add(this._privateKeySelect);
             this._sshGroup.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this._sshGroup.Location = new System.Drawing.Point(8, 88);
+            this._sshGroup.Location = new System.Drawing.Point(8, 152);
             this._sshGroup.Name = "_sshGroup";
-            this._sshGroup.Size = new System.Drawing.Size(312, 112);
+            this._sshGroup.Size = new System.Drawing.Size(312, 129);
             this._sshGroup.TabIndex = 6;
             this._sshGroup.TabStop = false;
             // 
             // _usernameLabel
             // 
             this._usernameLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._usernameLabel.Location = new System.Drawing.Point(8, 16);
+            this._usernameLabel.Location = new System.Drawing.Point(8, 18);
             this._usernameLabel.Name = "_usernameLabel";
             this._usernameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._usernameLabel.Size = new System.Drawing.Size(80, 16);
+            this._usernameLabel.Size = new System.Drawing.Size(80, 18);
             this._usernameLabel.TabIndex = 0;
             this._usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _userNameBox
             // 
-            this._userNameBox.Location = new System.Drawing.Point(96, 16);
+            this._userNameBox.Location = new System.Drawing.Point(96, 18);
             this._userNameBox.Name = "_userNameBox";
-            this._userNameBox.Size = new System.Drawing.Size(208, 20);
+            this._userNameBox.Size = new System.Drawing.Size(208, 21);
             this._userNameBox.TabIndex = 1;
             // 
             // _authenticationLabel
             // 
             this._authenticationLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._authenticationLabel.Location = new System.Drawing.Point(8, 40);
+            this._authenticationLabel.Location = new System.Drawing.Point(8, 44);
             this._authenticationLabel.Name = "_authenticationLabel";
             this._authenticationLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._authenticationLabel.Size = new System.Drawing.Size(80, 16);
+            this._authenticationLabel.Size = new System.Drawing.Size(80, 18);
             this._authenticationLabel.TabIndex = 2;
             this._authenticationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _authOptions
             // 
             this._authOptions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._authOptions.Location = new System.Drawing.Point(96, 40);
+            this._authOptions.Location = new System.Drawing.Point(96, 44);
             this._authOptions.Name = "_authOptions";
-            this._authOptions.Size = new System.Drawing.Size(208, 20);
+            this._authOptions.Size = new System.Drawing.Size(208, 21);
             this._authOptions.TabIndex = 3;
             this._authOptions.SelectedIndexChanged += new System.EventHandler(this.AdjustAuthenticationUI);
             // 
             // _passphraseLabel
             // 
             this._passphraseLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._passphraseLabel.Location = new System.Drawing.Point(8, 64);
+            this._passphraseLabel.Location = new System.Drawing.Point(8, 70);
             this._passphraseLabel.Name = "_passphraseLabel";
             this._passphraseLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._passphraseLabel.Size = new System.Drawing.Size(80, 16);
+            this._passphraseLabel.Size = new System.Drawing.Size(80, 18);
             this._passphraseLabel.TabIndex = 4;
             this._passphraseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _passphraseBox
             // 
-            this._passphraseBox.Location = new System.Drawing.Point(96, 64);
+            this._passphraseBox.Location = new System.Drawing.Point(96, 70);
             this._passphraseBox.Name = "_passphraseBox";
             this._passphraseBox.PasswordChar = '*';
-            this._passphraseBox.Size = new System.Drawing.Size(208, 19);
+            this._passphraseBox.Size = new System.Drawing.Size(208, 20);
             this._passphraseBox.TabIndex = 5;
             // 
             // _privateKeyLabel
             // 
             this._privateKeyLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._privateKeyLabel.Location = new System.Drawing.Point(8, 88);
+            this._privateKeyLabel.Location = new System.Drawing.Point(8, 96);
             this._privateKeyLabel.Name = "_privateKeyLabel";
             this._privateKeyLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._privateKeyLabel.Size = new System.Drawing.Size(80, 16);
+            this._privateKeyLabel.Size = new System.Drawing.Size(80, 18);
             this._privateKeyLabel.TabIndex = 6;
             this._privateKeyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _privateKeyFile
             // 
-            this._privateKeyFile.Location = new System.Drawing.Point(96, 88);
+            this._privateKeyFile.Location = new System.Drawing.Point(96, 96);
             this._privateKeyFile.Name = "_privateKeyFile";
-            this._privateKeyFile.Size = new System.Drawing.Size(188, 19);
+            this._privateKeyFile.Size = new System.Drawing.Size(188, 20);
             this._privateKeyFile.TabIndex = 7;
             // 
             // _privateKeySelect
@@ -318,10 +326,10 @@ namespace Poderosa.Sessions {
             this._privateKeySelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this._privateKeySelect.ImageIndex = 0;
             this._privateKeySelect.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._privateKeySelect.Location = new System.Drawing.Point(285, 87);
+            this._privateKeySelect.Location = new System.Drawing.Point(285, 95);
             this._privateKeySelect.Name = "_privateKeySelect";
             this._privateKeySelect.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._privateKeySelect.Size = new System.Drawing.Size(19, 19);
+            this._privateKeySelect.Size = new System.Drawing.Size(19, 21);
             this._privateKeySelect.TabIndex = 8;
             this._privateKeySelect.Text = "...";
             this._privateKeySelect.Click += new System.EventHandler(this.OnOpenPrivateKey);
@@ -343,36 +351,36 @@ namespace Poderosa.Sessions {
             this._terminalGroup.Controls.Add(this._terminalTypeLabel);
             this._terminalGroup.Controls.Add(this._terminalTypeBox);
             this._terminalGroup.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this._terminalGroup.Location = new System.Drawing.Point(8, 208);
+            this._terminalGroup.Location = new System.Drawing.Point(8, 289);
             this._terminalGroup.Name = "_terminalGroup";
-            this._terminalGroup.Size = new System.Drawing.Size(312, 168);
+            this._terminalGroup.Size = new System.Drawing.Size(312, 176);
             this._terminalGroup.TabIndex = 7;
             this._terminalGroup.TabStop = false;
             // 
             // _telnetNewLine
             // 
-            this._telnetNewLine.Location = new System.Drawing.Point(216, 104);
+            this._telnetNewLine.Location = new System.Drawing.Point(216, 110);
             this._telnetNewLine.Name = "_telnetNewLine";
-            this._telnetNewLine.Size = new System.Drawing.Size(90, 36);
+            this._telnetNewLine.Size = new System.Drawing.Size(90, 39);
             this._telnetNewLine.TabIndex = 11;
             this._telnetNewLine.UseVisualStyleBackColor = true;
             // 
             // _logTypeLabel
             // 
             this._logTypeLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._logTypeLabel.Location = new System.Drawing.Point(8, 16);
+            this._logTypeLabel.Location = new System.Drawing.Point(8, 14);
             this._logTypeLabel.Name = "_logTypeLabel";
             this._logTypeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._logTypeLabel.Size = new System.Drawing.Size(96, 16);
+            this._logTypeLabel.Size = new System.Drawing.Size(96, 18);
             this._logTypeLabel.TabIndex = 0;
             this._logTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _logTypeBox
             // 
             this._logTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._logTypeBox.Location = new System.Drawing.Point(112, 16);
+            this._logTypeBox.Location = new System.Drawing.Point(112, 14);
             this._logTypeBox.Name = "_logTypeBox";
-            this._logTypeBox.Size = new System.Drawing.Size(172, 20);
+            this._logTypeBox.Size = new System.Drawing.Size(172, 21);
             this._logTypeBox.TabIndex = 1;
             this._logTypeBox.SelectionChangeCommitted += new System.EventHandler(this.OnLogTypeChanged);
             // 
@@ -382,7 +390,7 @@ namespace Poderosa.Sessions {
             this._logFileLabel.Location = new System.Drawing.Point(8, 40);
             this._logFileLabel.Name = "_logFileLabel";
             this._logFileLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._logFileLabel.Size = new System.Drawing.Size(88, 16);
+            this._logFileLabel.Size = new System.Drawing.Size(88, 18);
             this._logFileLabel.TabIndex = 2;
             this._logFileLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -390,7 +398,7 @@ namespace Poderosa.Sessions {
             // 
             this._logFileBox.Location = new System.Drawing.Point(112, 40);
             this._logFileBox.Name = "_logFileBox";
-            this._logFileBox.Size = new System.Drawing.Size(172, 20);
+            this._logFileBox.Size = new System.Drawing.Size(172, 21);
             this._logFileBox.TabIndex = 3;
             // 
             // _selectLogButton
@@ -401,7 +409,7 @@ namespace Poderosa.Sessions {
             this._selectLogButton.Location = new System.Drawing.Point(285, 41);
             this._selectLogButton.Name = "_selectLogButton";
             this._selectLogButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._selectLogButton.Size = new System.Drawing.Size(19, 19);
+            this._selectLogButton.Size = new System.Drawing.Size(19, 21);
             this._selectLogButton.TabIndex = 4;
             this._selectLogButton.Text = "...";
             this._selectLogButton.Click += new System.EventHandler(this.SelectLog);
@@ -409,89 +417,89 @@ namespace Poderosa.Sessions {
             // _encodingLabel
             // 
             this._encodingLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._encodingLabel.Location = new System.Drawing.Point(8, 64);
+            this._encodingLabel.Location = new System.Drawing.Point(8, 66);
             this._encodingLabel.Name = "_encodingLabel";
             this._encodingLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._encodingLabel.Size = new System.Drawing.Size(96, 16);
+            this._encodingLabel.Size = new System.Drawing.Size(96, 18);
             this._encodingLabel.TabIndex = 5;
             this._encodingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _encodingBox
             // 
             this._encodingBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._encodingBox.Location = new System.Drawing.Point(112, 64);
+            this._encodingBox.Location = new System.Drawing.Point(112, 66);
             this._encodingBox.Name = "_encodingBox";
-            this._encodingBox.Size = new System.Drawing.Size(96, 20);
+            this._encodingBox.Size = new System.Drawing.Size(96, 21);
             this._encodingBox.TabIndex = 6;
             // 
             // _localEchoLabel
             // 
             this._localEchoLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._localEchoLabel.Location = new System.Drawing.Point(8, 88);
+            this._localEchoLabel.Location = new System.Drawing.Point(8, 92);
             this._localEchoLabel.Name = "_localEchoLabel";
             this._localEchoLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._localEchoLabel.Size = new System.Drawing.Size(96, 16);
+            this._localEchoLabel.Size = new System.Drawing.Size(96, 18);
             this._localEchoLabel.TabIndex = 7;
             this._localEchoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _localEchoBox
             // 
             this._localEchoBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._localEchoBox.Location = new System.Drawing.Point(112, 88);
+            this._localEchoBox.Location = new System.Drawing.Point(112, 92);
             this._localEchoBox.Name = "_localEchoBox";
-            this._localEchoBox.Size = new System.Drawing.Size(96, 20);
+            this._localEchoBox.Size = new System.Drawing.Size(96, 21);
             this._localEchoBox.TabIndex = 8;
             // 
             // _newLineLabel
             // 
             this._newLineLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._newLineLabel.Location = new System.Drawing.Point(8, 112);
+            this._newLineLabel.Location = new System.Drawing.Point(8, 118);
             this._newLineLabel.Name = "_newLineLabel";
             this._newLineLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._newLineLabel.Size = new System.Drawing.Size(96, 16);
+            this._newLineLabel.Size = new System.Drawing.Size(96, 18);
             this._newLineLabel.TabIndex = 9;
             this._newLineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _newLineBox
             // 
             this._newLineBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._newLineBox.Location = new System.Drawing.Point(112, 112);
+            this._newLineBox.Location = new System.Drawing.Point(112, 118);
             this._newLineBox.Name = "_newLineBox";
-            this._newLineBox.Size = new System.Drawing.Size(96, 20);
+            this._newLineBox.Size = new System.Drawing.Size(96, 21);
             this._newLineBox.TabIndex = 10;
             this._newLineBox.SelectedIndexChanged += new System.EventHandler(this._newLineBox_SelectedIndexChanged);
             // 
             // _terminalTypeLabel
             // 
-            this._terminalTypeLabel.Location = new System.Drawing.Point(8, 136);
+            this._terminalTypeLabel.Location = new System.Drawing.Point(8, 188);
             this._terminalTypeLabel.Name = "_terminalTypeLabel";
-            this._terminalTypeLabel.Size = new System.Drawing.Size(96, 23);
+            this._terminalTypeLabel.Size = new System.Drawing.Size(96, 25);
             this._terminalTypeLabel.TabIndex = 12;
             this._terminalTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _terminalTypeBox
             // 
             this._terminalTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._terminalTypeBox.Location = new System.Drawing.Point(112, 136);
+            this._terminalTypeBox.Location = new System.Drawing.Point(112, 144);
             this._terminalTypeBox.Name = "_terminalTypeBox";
-            this._terminalTypeBox.Size = new System.Drawing.Size(96, 20);
+            this._terminalTypeBox.Size = new System.Drawing.Size(96, 21);
             this._terminalTypeBox.TabIndex = 13;
             // 
             // _autoExecMacroPathLabel
             // 
             this._autoExecMacroPathLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._autoExecMacroPathLabel.Location = new System.Drawing.Point(16, 391);
+            this._autoExecMacroPathLabel.Location = new System.Drawing.Point(16, 437);
             this._autoExecMacroPathLabel.Name = "_autoExecMacroPathLabel";
             this._autoExecMacroPathLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._autoExecMacroPathLabel.Size = new System.Drawing.Size(100, 16);
+            this._autoExecMacroPathLabel.Size = new System.Drawing.Size(100, 17);
             this._autoExecMacroPathLabel.TabIndex = 8;
             this._autoExecMacroPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // _autoExecMacroPathBox
             // 
-            this._autoExecMacroPathBox.Location = new System.Drawing.Point(120, 390);
+            this._autoExecMacroPathBox.Location = new System.Drawing.Point(120, 479);
             this._autoExecMacroPathBox.Name = "_autoExecMacroPathBox";
-            this._autoExecMacroPathBox.Size = new System.Drawing.Size(172, 19);
+            this._autoExecMacroPathBox.Size = new System.Drawing.Size(172, 20);
             this._autoExecMacroPathBox.TabIndex = 9;
             // 
             // _selectAutoExecMacroButton
@@ -499,20 +507,58 @@ namespace Poderosa.Sessions {
             this._selectAutoExecMacroButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this._selectAutoExecMacroButton.ImageIndex = 0;
             this._selectAutoExecMacroButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._selectAutoExecMacroButton.Location = new System.Drawing.Point(293, 390);
+            this._selectAutoExecMacroButton.Location = new System.Drawing.Point(293, 479);
             this._selectAutoExecMacroButton.Name = "_selectAutoExecMacroButton";
             this._selectAutoExecMacroButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._selectAutoExecMacroButton.Size = new System.Drawing.Size(19, 19);
+            this._selectAutoExecMacroButton.Size = new System.Drawing.Size(19, 20);
             this._selectAutoExecMacroButton.TabIndex = 10;
             this._selectAutoExecMacroButton.Text = "...";
             this._selectAutoExecMacroButton.Click += new System.EventHandler(this._selectAutoExecMacroButton_Click);
             // 
+            // _captionLabel
+            // 
+            this._captionLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._captionLabel.Location = new System.Drawing.Point(16, 43);
+            this._captionLabel.Name = "_captionLabel";
+            this._captionLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this._captionLabel.Size = new System.Drawing.Size(80, 18);
+            this._captionLabel.TabIndex = 9;
+            this._captionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // _captionBox
+            // 
+            this._captionBox.Location = new System.Drawing.Point(104, 43);
+            this._captionBox.Name = "_captionBox";
+            this._captionBox.Size = new System.Drawing.Size(208, 20);
+            this._captionBox.TabIndex = 10;
+            // 
+            // _groupLabel
+            // 
+            this._groupLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._groupLabel.Location = new System.Drawing.Point(17, 16);
+            this._groupLabel.Name = "_groupLabel";
+            this._groupLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this._groupLabel.Size = new System.Drawing.Size(80, 18);
+            this._groupLabel.TabIndex = 13;
+            this._groupLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // _groupBox
+            // 
+            this._groupBox.Location = new System.Drawing.Point(104, 16);
+            this._groupBox.Name = "_groupBox";
+            this._groupBox.Size = new System.Drawing.Size(208, 21);
+            this._groupBox.TabIndex = 14;
+            // 
             // TelnetSSHLoginDialog
             // 
             this.AcceptButton = this._loginButton;
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 12);
+            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.CancelButton = this._cancelButton;
-            this.ClientSize = new System.Drawing.Size(330, 457);
+            this.ClientSize = new System.Drawing.Size(330, 550);
+            this.Controls.Add(this._groupBox);
+            this.Controls.Add(this._groupLabel);
+            this.Controls.Add(this._captionLabel);
+            this.Controls.Add(this._captionBox);
             this.Controls.Add(this._hostLabel);
             this.Controls.Add(this._hostBox);
             this.Controls.Add(this._methodLabel);
@@ -543,6 +589,10 @@ namespace Poderosa.Sessions {
             this.Controls.SetChildIndex(this._hostBox, 0);
             this.Controls.SetChildIndex(this._cancelButton, 0);
             this.Controls.SetChildIndex(this._hostLabel, 0);
+            this.Controls.SetChildIndex(this._captionBox, 0);
+            this.Controls.SetChildIndex(this._captionLabel, 0);
+            this.Controls.SetChildIndex(this._groupLabel, 0);
+            this.Controls.SetChildIndex(this._groupBox, 0);
             this._sshGroup.ResumeLayout(false);
             this._sshGroup.PerformLayout();
             this._terminalGroup.ResumeLayout(false);
@@ -553,6 +603,8 @@ namespace Poderosa.Sessions {
         #endregion
 
         private void InitializeText() {
+            this._groupLabel.Text = TEnv.Strings.GetString("Form.LoginDialog._groupLabel");
+            this._captionLabel.Text = TEnv.Strings.GetString("Form.LoginDialog._captionLabel");
             this._hostLabel.Text = TEnv.Strings.GetString("Form.LoginDialog._hostLabel");
             this._portLabel.Text = TEnv.Strings.GetString("Form.LoginDialog._portLabel");
             this._methodLabel.Text = TEnv.Strings.GetString("Form.LoginDialog._methodLabel");
@@ -573,6 +625,7 @@ namespace Poderosa.Sessions {
             this._cancelButton.Text = TEnv.Strings.GetString("Common.Cancel");
             this.Text = TEnv.Strings.GetString("Form.LoginDialog.Text");
             this._telnetNewLine.Text = TEnv.Strings.GetString("Form.LoginDialog._telnetNewLine");
+
 
             this._methodBox.Items.AddRange(new object[] {
                 new ListItem<ConnectionMethod>(ConnectionMethod.Telnet, "Telnet"),
@@ -613,7 +666,7 @@ namespace Poderosa.Sessions {
         }
 
         private void InitializeLoginParams() {
-            //çÏÇ¡ÇƒÇ®Ç≠
+            //‰Ωú„Å£„Å¶„Åä„Åè
             AdjustLoginDialogUISupport("org.poderosa.terminalsessions.loginDialogUISupport", "telnetSSHLoginDialogUISupport");
 
             LoginDialogInitializeInfo info = new LoginDialogInitializeInfo();
@@ -621,9 +674,14 @@ namespace Poderosa.Sessions {
             Debug.Assert(extp != null);
             ITelnetSSHLoginDialogInitializer[] suppliers = (ITelnetSSHLoginDialogInitializer[])extp.GetExtensions();
 
-            //èáèòÇñ‚ÇÌÇ∏ëSïîìÀÇ¡çûÇﬁ
+            //È†ÜÂ∫è„ÇíÂïè„Çè„ÅöÂÖ®ÈÉ®Á™Å„Å£Ëæº„ÇÄ
             foreach (ITelnetSSHLoginDialogInitializer s in suppliers)
                 s.ApplyLoginDialogInfo(info);
+
+            foreach (string g in info.Groups)
+                _groupBox.Items.Add(g);
+            if (_groupBox.Items.Count > 0)
+                _groupBox.SelectedIndex = 0;
 
             foreach (string h in info.Hosts)
                 _hostBox.Items.Add(h);
@@ -638,7 +696,7 @@ namespace Poderosa.Sessions {
             foreach (int p in info.Ports)
                 _portBox.Items.Add(PortDescription(p));
 
-            //TODO Ç±Ç±ÇEXTPâªÇµÇƒÅAÉçÉOÇÃèâä˙ê›íËÇçsÇ¶ÇÈÇÊÇ§Ç…Ç∑ÇÈ
+            //TODO „Åì„Åì„ÇíEXTPÂåñ„Åó„Å¶„ÄÅ„É≠„Ç∞„ÅÆÂàùÊúüË®≠ÂÆö„ÇíË°å„Åà„Çã„Çà„ÅÜ„Å´„Åô„Çã
             _logTypeBox.SelectedItem = LogType.None;    // select EnumListItem<T> by T
         }
 
@@ -665,7 +723,7 @@ namespace Poderosa.Sessions {
             _telnetNewLine.Enabled = (protocol == ConnectionMethod.Telnet) && isCRLF;
         }
 
-        //ägí£É|ÉCÉìÉgÇ©ÇÁéÊÇ¡ÇΩÉCÉìÉ^ÉtÉFÅ[ÉXÇégÇ¡ÇƒApplyParamÅBÇ»ÇØÇÍÇŒÉfÉtÉHÉãÉgÇ≈
+        //Êã°Âºµ„Éù„Ç§„É≥„Éà„Åã„ÇâÂèñ„Å£„Åü„Ç§„É≥„Çø„Éï„Çß„Éº„Çπ„Çí‰Ωø„Å£„Å¶ApplyParam„ÄÇ„Å™„Åë„Çå„Å∞„Éá„Éï„Ç©„É´„Éà„Åß
         public void ApplyParam() {
             ITerminalParameter parameter = null;
             ITerminalSettings settings = null;
@@ -739,11 +797,11 @@ namespace Poderosa.Sessions {
             ITerminalParameter parameter = null;
             ITerminalSettings settings = null;
             _loginDialogUISupport.FillCorrespondingDestination(typeof(ITCPParameter), _hostBox.Text, out parameter, out settings);
-            if (parameter != null && settings != null) { //å¥óùìIÇ…ÇÕï–ï˚ÇÃÇ›ÇÃìKópÇ‡Ç†ÇÈÇ™
+            if (parameter != null && settings != null) { //ÂéüÁêÜÁöÑ„Å´„ÅØÁâáÊñπ„ÅÆ„Åø„ÅÆÈÅ©Áî®„ÇÇ„ÅÇ„Çã„Åå
                 ISSHLoginParameter ssh = (ISSHLoginParameter)parameter.GetAdapter(typeof(ISSHLoginParameter));
                 ITCPParameter tcp = (ITCPParameter)parameter.GetAdapter(typeof(ITCPParameter));
                 if (ssh != null) {
-                    ssh.PasswordOrPassphrase = "";
+                    //ssh.PasswordOrPassphrase = "";
                     if (TerminalSessionsPlugin.Instance.ProtocolService.ProtocolOptions.RetainsPassphrase)
                         ssh.PasswordOrPassphrase = TerminalSessionsPlugin.Instance.ProtocolService.PassphraseCache.GetOrEmpty(tcp.Destination, ssh.Account);
                 }
@@ -753,7 +811,7 @@ namespace Poderosa.Sessions {
         }
 
         private static int ParsePort(string text) {
-            //ïpèoÇÃÇ‚Ç¬
+            //È†ªÂá∫„ÅÆ„ÇÑ„Å§
             if (text.IndexOf("(22)") != -1)
                 return 22;
             if (text.IndexOf("(23)") != -1)
@@ -781,7 +839,7 @@ namespace Poderosa.Sessions {
             string fn = TerminalUtil.SelectPrivateKeyFileByDialog(this);
             if (fn != null)
                 _privateKeyFile.Text = fn;
-            _privateKeySelect.Focus(); //Ç«Ç¡ÇøÇ…ÇµÇƒÇ‡éüÇÃÉtÉHÅ[ÉJÉXÇÕåÆëIëÉ{É^ÉìÇ÷
+            _privateKeySelect.Focus(); //„Å©„Å£„Å°„Å´„Åó„Å¶„ÇÇÊ¨°„ÅÆ„Éï„Ç©„Éº„Ç´„Çπ„ÅØÈçµÈÅ∏Êäû„Éú„Çø„É≥„Å∏
         }
 
         protected override ITerminalParameter PrepareTerminalParameter() {
@@ -801,7 +859,7 @@ namespace Poderosa.Sessions {
                 ClearConnectingState();
         }
 
-        //ì¸óÕì‡óeÇ…åÎÇËÇ™Ç†ÇÍÇŒÇªÇÍÇåxçêÇµÇƒnullÇï‘Ç∑ÅBÇ»ÇØÇÍÇŒïKóvÇ»Ç∆Ç±ÇÎÇñÑÇﬂÇΩTCPTerminalParamÇï‘Ç∑
+        //ÂÖ•ÂäõÂÜÖÂÆπ„Å´Ë™§„Çä„Åå„ÅÇ„Çå„Å∞„Åù„Çå„ÇíË≠¶Âëä„Åó„Å¶null„ÇíËøî„Åô„ÄÇ„Å™„Åë„Çå„Å∞ÂøÖË¶Å„Å™„Å®„Åì„Çç„ÇíÂüã„ÇÅ„ÅüTCPTerminalParam„ÇíËøî„Åô
         private ITerminalParameter ValidateContent() {
             string msg = null;
             ITCPParameter tcp = null;
@@ -833,13 +891,13 @@ namespace Poderosa.Sessions {
                 if (_hostBox.Text.Length == 0)
                     msg = TEnv.Strings.GetString("Message.LoginDialog.HostIsEmpty");
 
-                //ÉçÉOê›íË
+                //„É≠„Ç∞Ë®≠ÂÆö
                 LogType logtype = ((EnumListItem<LogType>)_logTypeBox.SelectedItem).Value;
                 ISimpleLogSettings logsettings = null;
                 if (logtype != LogType.None) {
                     logsettings = CreateSimpleLogSettings(logtype, _logFileBox.Text);
                     if (logsettings == null)
-                        return null; //ìÆçÏÉLÉÉÉìÉZÉã
+                        return null; //Âãï‰Ωú„Ç≠„É£„É≥„Çª„É´
                 }
 
                 ITerminalParameter param = (ITerminalParameter)tcp.GetAdapter(typeof(ITerminalParameter));
@@ -868,7 +926,11 @@ namespace Poderosa.Sessions {
 
                 ITerminalSettings settings = this.TerminalSettings;
                 settings.BeginUpdate();
-                settings.Caption = _hostBox.Text;
+                if (_captionBox.Text.Length > 0)
+                    settings.Caption = _captionBox.Text + "_" + _userNameBox.Text;
+                else
+                    settings.Caption = _hostBox.Text;
+                settings.Group = _groupBox.Text;
                 settings.Icon = Poderosa.TerminalSession.Properties.Resources.NewConnection16x16;
                 settings.Encoding = ((EnumListItem<EncodingType>)_encodingBox.SelectedItem).Value;
                 settings.LocalEcho = ((ListItem<bool>)_localEchoBox.SelectedItem).Value;

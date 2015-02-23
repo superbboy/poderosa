@@ -27,7 +27,7 @@ using Poderosa.View;
 
 namespace Poderosa {
     internal class GEnv {
-        //ì‡ïîÇ≈ä«óù
+        //ÂÜÖÈÉ®„ÅßÁÆ°ÁêÜ
         private static Win32.SystemMetrics _systemMetrics;
         private static RenderProfile _defaultRenderProfile;
         private static StringResource _stringResource;
@@ -134,7 +134,7 @@ namespace Poderosa {
 
     internal class GConst {
 
-        //WMG_MAINTHREADTASKÇÃWParam
+        //WMG_MAINTHREADTASK„ÅÆWParam
         public const int WPG_ADJUSTIMECOMPOSITION = 1;
         public const int WPG_TOGGLESELECTIONMODE = 2;
         public const int WPG_DATA_ARRIVED = 3;

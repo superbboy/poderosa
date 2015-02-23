@@ -17,7 +17,7 @@ using Poderosa.View;
 [assembly: PluginDeclaration(typeof(Poderosa.Serializing.SerializeServicePlugin))]
 
 namespace Poderosa.Serializing {
-    //StructuredText���g���ăI�u�W�F�N�g���V���A���C�Y���邽�߂̎d�g��
+    //StructuredTextを使ってオブジェクトをシリアライズするための仕組み
     [PluginInfo(ID = SerializeServicePlugin.PLUGIN_ID, Version = VersionInfo.PODEROSA_VERSION, Author = VersionInfo.PROJECT_NAME)]
     internal class SerializeServicePlugin : PluginBase, ISerializeService {
         public const string PLUGIN_ID = "org.poderosa.core.serializing";
@@ -29,7 +29,7 @@ namespace Poderosa.Serializing {
             base.InitializePlugin(poderosa);
             _serviceElements = poderosa.PluginManager.CreateExtensionPoint(EXTENSIONPOINT_NAME, typeof(ISerializeServiceElement), this);
             //_typeToElement = new TypedHashtable<Type, ISerializeServiceElement>();
-            //RenderProfile�͂��̃A�Z���u���Ȃ̂œo�^���Ă��܂�
+            //RenderProfileはこのアセンブリなので登録してしまう
             _serviceElements.RegisterExtension(new RenderProfileSerializer());
         }
 
@@ -56,7 +56,7 @@ namespace Poderosa.Serializing {
             return t;
         }
 
-        //�^���猟������B�܂����͑����Ȃ����낤���烊�j�A�T�[�`�ł������낤�B�ǂ����Ă��A�Ƃ����ꍇ�ɂ͂��̒��ŃL���b�V�����邭�炢��
+        //型から検索する。まあ個数は多くないだろうからリニアサーチでいいだろう。どうしても、という場合にはこの中でキャッシュするくらいか
         private ISerializeServiceElement FindServiceElement(string tag) {
             if (_nameToSerializer == null) {
                 _nameToSerializer = new TypedHashtable<string, ISerializeServiceElement>();

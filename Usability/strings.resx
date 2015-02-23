@@ -1,805 +1,912 @@
-﻿<root>
-  <resheader name="ResMimeType">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
-  <resheader name="Version">
-    <value>1.0.0.0</value>
+  <resheader name="version">
+    <value>2.0</value>
   </resheader>
-  <resheader name="Reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <resheader name="Writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Common.OK">
+  <data name="Common.OK" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="Common.Cancel">
+  <data name="Common.Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="Common.FontSample">
+  <data name="Common.FontSample" xml:space="preserve">
     <value>Poderosa</value>
   </data>
-  <data name="Common.CJKFontSample">
-    <value>
-    </value>
+  <data name="Common.CJKFontSample" xml:space="preserve">
+    <value />
   </data>
-  <data name="CommandCategory.SSH">
+  <data name="CommandCategory.SSH" xml:space="preserve">
     <value>SSH</value>
   </data>
-  <data name="Command.OptionDialog">
+  <data name="Command.OptionDialog" xml:space="preserve">
     <value>Option dialog</value>
   </data>
-  <data name="Command.GenerateKeyPair">
+  <data name="Command.GenerateKeyPair" xml:space="preserve">
     <value>Start SSH key generation wizard</value>
   </data>
-  <data name="Command.ChangePassphrase">
+  <data name="Command.ChangePassphrase" xml:space="preserve">
     <value>Change passphrase for private key</value>
   </data>
-  <data name="Command.AgentKeyListDialog">
+  <data name="Command.AgentKeyListDialog" xml:space="preserve">
     <value>Agent forwarding configuration</value>
   </data>
-  <data name="Command.EditRenderProfile">
+  <data name="Command.EditRenderProfile" xml:space="preserve">
     <value>Edit display profile</value>
   </data>
-  <data name="Command.RenameTab">
+  <data name="Command.RenameTab" xml:space="preserve">
     <value>Rename tab</value>
   </data>
-  <data name="Command.CommentLog">
+  <data name="Command.CommentLog" xml:space="preserve">
     <value>Writes a comment to the log</value>
   </data>
-  <data name="Command.ChangeLog">
+  <data name="Command.ChangeLog" xml:space="preserve">
     <value>Changes the log settings</value>
   </data>
-  <data name="Command.PoderosaLog">
+  <data name="Command.PoderosaLog" xml:space="preserve">
     <value>Shows Poderosa event log</value>
   </data>
-  <data name="Menu.EditRenderProfile">
+  <data name="Menu.EditRenderProfile" xml:space="preserve">
     <value>Edit &amp;display profile...</value>
   </data>
-  <data name="Menu.RenameTab">
+  <data name="Menu.RenameTab" xml:space="preserve">
     <value>Rename &amp;tab...</value>
   </data>
-  <data name="Caption.RenameTab">
+  <data name="Caption.RenameTab" xml:space="preserve">
     <value>Rename tab</value>
   </data>
-  <data name="Menu.CommentLog">
+  <data name="Menu.CommentLog" xml:space="preserve">
     <value>Comment to lo&amp;g...</value>
   </data>
-  <data name="Menu.ChangeLog">
+  <data name="Menu.ChangeLog" xml:space="preserve">
     <value>Change &amp;log...</value>
   </data>
-  <data name="Menu.PoderosaLog">
+  <data name="Menu.PoderosaLog" xml:space="preserve">
     <value>Shows Poderosa &amp;event log...</value>
   </data>
-  <data name="Form.ChangeLog.Text">
+  <data name="Form.ChangeLog.Text" xml:space="preserve">
     <value>Log configuration</value>
   </data>
-  <data name="Form.ChangeLog._logTypeLabel">
+  <data name="Form.ChangeLog._logTypeLabel" xml:space="preserve">
     <value>Log &amp;type</value>
   </data>
-  <data name="Form.ChangeLog._fileNameLabel">
+  <data name="Form.ChangeLog._fileNameLabel" xml:space="preserve">
     <value>&amp;File name</value>
   </data>
-  <data name="Form.CommentLog._insertButton">
+  <data name="Form.CommentLog._insertButton" xml:space="preserve">
     <value>&amp;Insert...</value>
   </data>
-  <data name="Form.CommentLog.Text">
+  <data name="Form.CommentLog.Text" xml:space="preserve">
     <value>Comment to log</value>
   </data>
-  <data name="Menu.CommentLog.Time">
+  <data name="Menu.CommentLog.Time" xml:space="preserve">
     <value>&amp;Time</value>
   </data>
-  <data name="Menu.CommentLog.DateTime">
+  <data name="Menu.CommentLog.DateTime" xml:space="preserve">
     <value>&amp;Date and Time</value>
   </data>
-  <data name="Form.EditRenderProfile._bgColorLabel">
+  <data name="Form.EditRenderProfile._bgColorLabel" xml:space="preserve">
     <value>&amp;Back color</value>
   </data>
-  <data name="Form.EditRenderProfile._textColorLabel">
+  <data name="Form.EditRenderProfile._textColorLabel" xml:space="preserve">
     <value>&amp;Text color</value>
   </data>
-  <data name="Form.EditRenderProfile._editEscapeSequenceColorBox">
+  <data name="Form.EditRenderProfile._editEscapeSequenceColorBox" xml:space="preserve">
     <value>Color settings for &amp;escape sequences...</value>
   </data>
-  <data name="Form.EditRenderProfile._fontSelectButton">
+  <data name="Form.EditRenderProfile._fontSelectButton" xml:space="preserve">
     <value>Change...</value>
   </data>
-  <data name="Form.EditRenderProfile._fontLabel">
+  <data name="Form.EditRenderProfile._fontLabel" xml:space="preserve">
     <value>&amp;Font</value>
   </data>
-  <data name="Form.EditRenderProfile._backgroungImageLabel">
+  <data name="Form.EditRenderProfile._backgroungImageLabel" xml:space="preserve">
     <value>Back &amp;picture</value>
   </data>
-  <data name="Form.EditRenderProfile._imageStyleLabel">
+  <data name="Form.EditRenderProfile._imageStyleLabel" xml:space="preserve">
     <value>Picture &amp;location</value>
   </data>
-  <data name="Form.EditRenderProfile._setToDefaultButton">
+  <data name="Form.EditRenderProfile._setToDefaultButton" xml:space="preserve">
     <value>&amp;Reset</value>
   </data>
-  <data name="Form.EditRenderProfile.Text">
+  <data name="Form.EditRenderProfile.Text" xml:space="preserve">
     <value>Edit display profile</value>
   </data>
-  <data name="Message.EditRenderProfile.InvalidPicture">
+  <data name="Message.EditRenderProfile.InvalidPicture" xml:space="preserve">
     <value>{0} is not a correct picture file.</value>
   </data>
-  <data name="Util.SelectPicture.Caption">
+  <data name="Util.SelectPicture.Caption" xml:space="preserve">
     <value>Select picture file</value>
   </data>
-  <data name="Form.EditEscapesequenceColor.Text">
+  <data name="Form.EditEscapesequenceColor.Text" xml:space="preserve">
     <value>Color settings for escape sequences</value>
   </data>
-  <data name="Form.EditEscapesequenceColor._setDefaultButton">
+  <data name="Form.EditEscapesequenceColor._setDefaultButton" xml:space="preserve">
     <value>Set to &amp;default</value>
   </data>
-  <data name="Caption.EditEscapesequenceColor.DefaultColor">
+  <data name="Caption.EditEscapesequenceColor.DefaultColor" xml:space="preserve">
     <value>Default</value>
   </data>
-  <data name="Caption.EditEscapesequenceColor.BackColor">
+  <data name="Caption.EditEscapesequenceColor.BackColor" xml:space="preserve">
     <value>Background</value>
   </data>
-  <data name="Form.GFontDialog._lAsciiFont">
+  <data name="Form.GFontDialog._lAsciiFont" xml:space="preserve">
     <value>Font Name</value>
   </data>
-  <data name="Form.GFontDialog._lCJKFont">
+  <data name="Form.GFontDialog._lCJKFont" xml:space="preserve">
     <value>CJK Font Name</value>
   </data>
-  <data name="Form.GFontDialog._lFontSize">
+  <data name="Form.GFontDialog._lFontSize" xml:space="preserve">
     <value>&amp;Size</value>
   </data>
-  <data name="Form.GFontDialog._checkClearType">
+  <data name="Form.GFontDialog._checkClearType" xml:space="preserve">
     <value>Use &amp;Clear Type Font as much as possible</value>
   </data>
-  <data name="Form.GFontDialog._checkBoldStyle">
+  <data name="Form.GFontDialog._checkBoldStyle" xml:space="preserve">
     <value>Enables &amp;bold fonts</value>
   </data>
-  <data name="Form.GFontDialog._checkForceBoldStyle">
+  <data name="Form.GFontDialog._checkForceBoldStyle" xml:space="preserve">
     <value>&amp;Force bold fonts</value>
   </data>
-  <data name="Form.GFontDialog._labelNotice">
-    <value>
-    </value>
+  <data name="Form.GFontDialog._labelNotice" xml:space="preserve">
+    <value />
   </data>
-  <data name="Form.GFontDialog.Text">
+  <data name="Form.GFontDialog.Text" xml:space="preserve">
     <value>Select font</value>
   </data>
-  <data name="Message.GFontDialog.NotTrueTypeWarning">
+  <data name="Message.GFontDialog.NotTrueTypeWarning" xml:space="preserve">
     <value>The size was changed to {1} since {0} is not a TrueType font.</value>
   </data>
-  <data name="Menu.OptionDialog">
+  <data name="Menu.OptionDialog" xml:space="preserve">
     <value>&amp;Options...</value>
   </data>
-  <data name="Form.OptionDialog.Text">
+  <data name="Form.OptionDialog.Text" xml:space="preserve">
     <value>Option settings</value>
   </data>
-  <data name="Form.OptionDialog._displayPanel">
+  <data name="Form.OptionDialog._displayPanel" xml:space="preserve">
     <value>Display</value>
   </data>
-  <data name="Form.OptionDialog._colorFontGroup">
+  <data name="Form.OptionDialog._colorFontGroup" xml:space="preserve">
     <value>Color / Font / Background </value>
   </data>
-  <data name="Form.OptionDialog._bgColorLabel">
+  <data name="Form.OptionDialog._bgColorLabel" xml:space="preserve">
     <value>&amp;Back color</value>
   </data>
-  <data name="Form.OptionDialog._textColorLabel">
+  <data name="Form.OptionDialog._textColorLabel" xml:space="preserve">
     <value>&amp;Text color</value>
   </data>
-  <data name="Form.OptionDialog._editEscapeSequenceColorBox">
+  <data name="Form.OptionDialog._editEscapeSequenceColorBox" xml:space="preserve">
     <value>Color settings for &amp;escape sequences...</value>
   </data>
-  <data name="Form.OptionDialog._darkenEsColorForBackground">
+  <data name="Form.OptionDialog._darkenEsColorForBackground" xml:space="preserve">
     <value>Use darkened color for the background color</value>
   </data>
-  <data name="Form.OptionDialog._fontLabel">
+  <data name="Form.OptionDialog._fontLabel" xml:space="preserve">
     <value>&amp;Font</value>
   </data>
-  <data name="Form.OptionDialog._fontSelectButton">
+  <data name="Form.OptionDialog._fontSelectButton" xml:space="preserve">
     <value>Change...</value>
   </data>
-  <data name="Form.OptionDialog._backgroundImageLabel">
+  <data name="Form.OptionDialog._backgroundImageLabel" xml:space="preserve">
     <value>Back &amp;image</value>
   </data>
-  <data name="Form.OptionDialog._imageStyleLabel">
+  <data name="Form.OptionDialog._imageStyleLabel" xml:space="preserve">
     <value>Image &amp;location</value>
   </data>
-  <data name="Form.OptionDialog._applyRenderProfileButton">
+  <data name="Form.OptionDialog._applyRenderProfileButton" xml:space="preserve">
     <value>Apply to all</value>
   </data>
-  <data name="Form.OptionDialog._caretGroup">
+  <data name="Form.OptionDialog._caretGroup" xml:space="preserve">
     <value>Caret</value>
   </data>
-  <data name="Form.OptionDialog._caretStyleLabel">
+  <data name="Form.OptionDialog._caretStyleLabel" xml:space="preserve">
     <value>&amp;Style</value>
   </data>
-  <data name="Form.OptionDialog._caretSpecifyColor">
+  <data name="Form.OptionDialog._caretSpecifyColor" xml:space="preserve">
     <value>Specify &amp;color</value>
   </data>
-  <data name="Form.OptionDialog._caretBlink">
+  <data name="Form.OptionDialog._caretBlink" xml:space="preserve">
     <value>Blin&amp;k</value>
   </data>
-  <data name="Form.OptionDialog._lineSpacingLabel">
+  <data name="Form.OptionDialog._lineSpacingLabel" xml:space="preserve">
     <value>Line spacing</value>
   </data>
-  <data name="Form.OptionDialog._pixelsLabel">
+  <data name="Form.OptionDialog._pixelsLabel" xml:space="preserve">
     <value>pixels</value>
   </data>
-  <data name="Form.OptionDialog._terminalPanel">
+  <data name="Form.OptionDialog._terminalPanel" xml:space="preserve">
     <value>Terminal</value>
   </data>
-  <data name="Form.OptionDialog._charDecodeErrorBehaviorLabel">
+  <data name="Form.OptionDialog._charDecodeErrorBehaviorLabel" xml:space="preserve">
     <value>Behavior in case of &amp;invalid data</value>
   </data>
-  <data name="Form.OptionDialog._bufferSizeLabel">
+  <data name="Form.OptionDialog._bufferSizeLabel" xml:space="preserve">
     <value>Buffer si&amp;ze</value>
   </data>
-  <data name="Form.OptionDialog._disconnectNotificationLabel">
+  <data name="Form.OptionDialog._disconnectNotificationLabel" xml:space="preserve">
     <value>&amp;Notification of disconnection</value>
   </data>
-  <data name="Form.OptionDialog._closeOnDisconnect">
+  <data name="Form.OptionDialog._closeOnDisconnect" xml:space="preserve">
     <value>Close &amp;Pane on disconnection</value>
   </data>
-  <data name="Form.OptionDialog._beepOnBellChar">
+  <data name="Form.OptionDialog._beepOnBellChar" xml:space="preserve">
     <value>Play Sound on &amp;bell Character</value>
   </data>
-  <data name="Form.OptionDialog._adjustsTabTitleToWindowTitle">
+  <data name="Form.OptionDialog._adjustsTabTitleToWindowTitle" xml:space="preserve">
     <value>Correspond &amp;tab name to xterm window title</value>
   </data>
-  <data name="Form.OptionDialog._allowsScrollInAppMode">
+  <data name="Form.OptionDialog._allowsScrollInAppMode" xml:space="preserve">
     <value>Allow &amp;scroll in application mode</value>
   </data>
-  <data name="Form.OptionDialog._keepAliveCheck">
+  <data name="Form.OptionDialog._keepAliveCheck" xml:space="preserve">
     <value>Send &amp;keep-alive packet periodically (every</value>
   </data>
-  <data name="Form.OptionDialog._keepAliveLabel">
+  <data name="Form.OptionDialog._keepAliveLabel" xml:space="preserve">
     <value>minutes)</value>
   </data>
-  <data name="Form.OptionDialog._defaultLogTypeLabel">
+  <data name="Form.OptionDialog._defaultLogTypeLabel" xml:space="preserve">
     <value>&amp;Log type</value>
   </data>
-  <data name="Form.OptionDialog._defaultLogDirectoryLabel">
+  <data name="Form.OptionDialog._defaultLogDirectoryLabel" xml:space="preserve">
     <value>&amp;Directory to save</value>
   </data>
-  <data name="Form.OptionDialog._autoLogCheckBox">
+  <data name="Form.OptionDialog._autoLogCheckBox" xml:space="preserve">
     <value>Set log file name &amp;automatically</value>
   </data>
-  <data name="Form.OptionDialog._peripheralPanel">
+  <data name="Form.OptionDialog._peripheralPanel" xml:space="preserve">
     <value>Operation</value>
   </data>
-  <data name="Form.OptionDialog._mouseGroup">
+  <data name="Form.OptionDialog._mouseGroup" xml:space="preserve">
     <value>Mouse</value>
   </data>
-  <data name="Form.OptionDialog._keyboardGroup">
+  <data name="Form.OptionDialog._keyboardGroup" xml:space="preserve">
     <value>Keyboard</value>
   </data>
-  <data name="Form.OptionDialog._leftAltKeyLabel">
+  <data name="Form.OptionDialog._leftAltKeyLabel" xml:space="preserve">
     <value>&amp;Left Alt key</value>
   </data>
-  <data name="Form.OptionDialog._rightAltKeyLabel">
+  <data name="Form.OptionDialog._rightAltKeyLabel" xml:space="preserve">
     <value>&amp;Right Alt key</value>
   </data>
-  <data name="Form.OptionDialog._send0x7FByDel">
+  <data name="Form.OptionDialog._send0x7FByDel" xml:space="preserve">
     <value>Send 0x7F by &amp;Delete key</value>
   </data>
-  <data name="Form.OptionDialog._send0x7FByBack">
+  <data name="Form.OptionDialog._send0x7FByBack" xml:space="preserve">
     <value>Send 0x7F by Bac&amp;kSpace key</value>
   </data>
-  <data name="Form.OptionDialog._zone0x1FLabel">
+  <data name="Form.OptionDialog._zone0x1FLabel" xml:space="preserve">
     <value>Transmission of &amp;0x1C-0x1F</value>
   </data>
-  <data name="Form.OptionDialog._autoKeySettingsLabel">
+  <data name="Form.OptionDialog._autoKeySettingsLabel" xml:space="preserve">
     <value>Key definition</value>
   </data>
-  <data name="Form.OptionDialog._customKeySettingsLabel">
+  <data name="Form.OptionDialog._customKeySettingsLabel" xml:space="preserve">
     <value>Additional &amp;key definitions</value>
   </data>
-  <data name="Form.OptionDialog._autoCopyByLeftButton">
+  <data name="Form.OptionDialog._autoCopyByLeftButton" xml:space="preserve">
     <value>&amp;Automatically copy when selected by mouse</value>
   </data>
-  <data name="Form.OptionDialog._additionalWordElementLabel">
+  <data name="Form.OptionDialog._additionalWordElementLabel" xml:space="preserve">
     <value>Additional characters for &amp;elements of word</value>
   </data>
-  <data name="Form.OptionDialog._rightButtonActionLabel">
+  <data name="Form.OptionDialog._rightButtonActionLabel" xml:space="preserve">
     <value>Action for &amp;right click</value>
   </data>
-  <data name="Form.OptionDialog._middleButtonActionLabel">
+  <data name="Form.OptionDialog._middleButtonActionLabel" xml:space="preserve">
     <value>Action for &amp;middle click</value>
   </data>
-  <data name="Form.OptionDialog._wheelAmountLabel">
+  <data name="Form.OptionDialog._wheelAmountLabel" xml:space="preserve">
     <value>Scroll amount for mouse &amp;wheel</value>
   </data>
-  <data name="Form.OptionDialog._viewSplitModifierLabel">
+  <data name="Form.OptionDialog._viewSplitModifierLabel" xml:space="preserve">
     <value>Modifier for &amp;pane division</value>
   </data>
-  <data name="Caption.KeysNone">
+  <data name="Caption.KeysNone" xml:space="preserve">
     <value>None</value>
   </data>
-  <data name="Form.OptionDialog._localBufferScrollModifierLabel">
+  <data name="Form.OptionDialog._localBufferScrollModifierLabel" xml:space="preserve">
     <value>Modifier Key for &amp;scrolling local buffer</value>
   </data>
-  <data name="Form.OptionDialog._shellSupportGroup">
+  <data name="Form.OptionDialog._shellSupportGroup" xml:space="preserve">
     <value>Shell support</value>
   </data>
-  <data name="Form.OptionDialog._enableComplementForNewConnections">
+  <data name="Form.OptionDialog._enableComplementForNewConnections" xml:space="preserve">
     <value>Enables shell &amp;complement by character input for new connections</value>
   </data>
-  <data name="Form.OptionDialog._commandPopupAlwaysOnTop">
+  <data name="Form.OptionDialog._commandPopupAlwaysOnTop" xml:space="preserve">
     <value>Shows command result pop-ups on the &amp;top</value>
   </data>
-  <data name="Form.OptionDialog._commandPopupInTaskBar">
+  <data name="Form.OptionDialog._commandPopupInTaskBar" xml:space="preserve">
     <value>Shows command result pop-ups in the task ba&amp;r</value>
   </data>
-  <data name="Form.OptionDialog._alertOnPasteNewLineCharCheck">
+  <data name="Form.OptionDialog._alertOnPasteNewLineCharCheck" xml:space="preserve">
     <value>Show alert when new-line character will be pasted</value>
   </data>
-  <data name="Form.OptionDialog._commandPanel">
+  <data name="Form.OptionDialog._commandPanel" xml:space="preserve">
     <value>Command</value>
   </data>
-  <data name="Form.OptionDialog._commandCategoryHeader">
+  <data name="Form.OptionDialog._commandCategoryHeader" xml:space="preserve">
     <value>Category</value>
   </data>
-  <data name="Form.OptionDialog._commandNameHeader">
+  <data name="Form.OptionDialog._commandNameHeader" xml:space="preserve">
     <value>Command</value>
   </data>
-  <data name="Form.OptionDialog._commandConfigHeader">
+  <data name="Form.OptionDialog._commandConfigHeader" xml:space="preserve">
     <value>Key allocation</value>
   </data>
-  <data name="Form.OptionDialog._resetKeyConfigButton">
+  <data name="Form.OptionDialog._resetKeyConfigButton" xml:space="preserve">
     <value>Reset to default</value>
   </data>
-  <data name="Form.OptionDialog._clearKeyConfigButton">
+  <data name="Form.OptionDialog._clearKeyConfigButton" xml:space="preserve">
     <value>Clear All</value>
   </data>
-  <data name="Form.OptionDialog._commandConfigGroup">
+  <data name="Form.OptionDialog._commandConfigGroup" xml:space="preserve">
     <value>Command setting</value>
   </data>
-  <data name="Form.OptionDialog._commandNameLabel">
+  <data name="Form.OptionDialog._commandNameLabel" xml:space="preserve">
     <value>Command name</value>
   </data>
-  <data name="Form.OptionDialog._currentConfigLabel">
+  <data name="Form.OptionDialog._currentConfigLabel" xml:space="preserve">
     <value>Current allocation</value>
   </data>
-  <data name="Form.OptionDialog._newAllocationLabel">
+  <data name="Form.OptionDialog._newAllocationLabel" xml:space="preserve">
     <value>New allocation</value>
   </data>
-  <data name="Form.OptionDialog._allocateKeyButton">
+  <data name="Form.OptionDialog._allocateKeyButton" xml:space="preserve">
     <value>Allocate</value>
   </data>
-  <data name="Form.OptionDialog._sshPanel">
+  <data name="Form.OptionDialog._sshPanel" xml:space="preserve">
     <value>SSH</value>
   </data>
-  <data name="Form.OptionDialog._cipherOrderGroup">
+  <data name="Form.OptionDialog._cipherOrderGroup" xml:space="preserve">
     <value>Priority of cipher algorithms</value>
   </data>
-  <data name="Form.OptionDialog._algorithmOrderUp">
+  <data name="Form.OptionDialog._algorithmOrderUp" xml:space="preserve">
     <value>&amp;Up</value>
   </data>
-  <data name="Form.OptionDialog._algorithmOrderDown">
+  <data name="Form.OptionDialog._algorithmOrderDown" xml:space="preserve">
     <value>&amp;Down</value>
   </data>
-  <data name="Form.OptionDialog._ssh2OptionGroup">
+  <data name="Form.OptionDialog._ssh2OptionGroup" xml:space="preserve">
     <value>Protocol option (Uses SSH2 only)</value>
   </data>
-  <data name="Form.OptionDialog._hostKeyLabel">
+  <data name="Form.OptionDialog._hostKeyLabel" xml:space="preserve">
     <value>&amp;Host key authentication algorithm</value>
   </data>
-  <data name="Form.OptionDialog._windowSizeLabel">
+  <data name="Form.OptionDialog._windowSizeLabel" xml:space="preserve">
     <value>&amp;Window size of SSH channel</value>
   </data>
-  <data name="Form.OptionDialog._sshMiscGroup">
+  <data name="Form.OptionDialog._sshMiscGroup" xml:space="preserve">
     <value>Miscellaneous</value>
   </data>
-  <data name="Form.OptionDialog._enableAgentForward">
+  <data name="Form.OptionDialog._enableAgentForward" xml:space="preserve">
     <value>Enable agent &amp;forwarding
 (Only for SSH2 connections to OpenSSH)</value>
   </data>
-  <data name="Form.OptionDialog._retainsPassphrase">
+  <data name="Form.OptionDialog._retainsPassphrase" xml:space="preserve">
     <value>&amp;Memorize passphrase until the application is terminated</value>
   </data>
-  <data name="Form.OptionDialog._sshCheckMAC">
+  <data name="Form.OptionDialog._sshCheckMAC" xml:space="preserve">
     <value>&amp;Check MAC
 (if you turn this off, the performance gains slightly at the risk of security.)</value>
   </data>
-  <data name="Form.OptionDialog._sshEventLog">
+  <data name="Form.OptionDialog._sshEventLog" xml:space="preserve">
     <value>Outputs SSH negotiation to Poderosa event &amp;log</value>
   </data>
-  <data name="Form.OptionDialog._connectionPanel">
+  <data name="Form.OptionDialog._connectionPanel" xml:space="preserve">
     <value>Connection</value>
   </data>
-  <data name="Form.OptionDialog._useSocks">
+  <data name="Form.OptionDialog._useSocks" xml:space="preserve">
     <value>Use &amp;SOCKS5</value>
   </data>
-  <data name="Form.OptionDialog._socksServerLabel">
+  <data name="Form.OptionDialog._socksServerLabel" xml:space="preserve">
     <value>Server &amp;name</value>
   </data>
-  <data name="Form.OptionDialog._socksPortLabel">
+  <data name="Form.OptionDialog._socksPortLabel" xml:space="preserve">
     <value>P&amp;ort</value>
   </data>
-  <data name="Form.OptionDialog._socksAccountLabel">
+  <data name="Form.OptionDialog._socksAccountLabel" xml:space="preserve">
     <value>&amp;Account</value>
   </data>
-  <data name="Form.OptionDialog._socksPasswordLabel">
+  <data name="Form.OptionDialog._socksPasswordLabel" xml:space="preserve">
     <value>&amp;Password</value>
   </data>
-  <data name="Form.OptionDialog._socksNANetworksLabel">
+  <data name="Form.OptionDialog._socksNANetworksLabel" xml:space="preserve">
     <value>&amp;Exclude the following networks for SOCKS
 (concatenate strings in the form '192.168.10.0/24' using semicolons)</value>
   </data>
-  <data name="Form.OptionDialog._IPv6Group">
+  <data name="Form.OptionDialog._IPv6Group" xml:space="preserve">
     <value>IPv6</value>
   </data>
-  <data name="Form.OptionDialog._IPv6PriorityLabel">
+  <data name="Form.OptionDialog._IPv6PriorityLabel" xml:space="preserve">
     <value>&amp;Priority to IPv4</value>
   </data>
-  <data name="Form.OptionDialog._genericPanel">
+  <data name="Form.OptionDialog._genericPanel" xml:space="preserve">
     <value>Generic</value>
   </data>
-  <data name="Form.OptionDialog._actionOnLaunchLabel">
+  <data name="Form.OptionDialog._actionOnLaunchLabel" xml:space="preserve">
     <value>&amp;Action on Launch</value>
   </data>
-  <data name="Form.OptionDialog._MRUSizeLabel">
+  <data name="Form.OptionDialog._MRUSizeLabel" xml:space="preserve">
     <value>&amp;Number of recent connections in file menu</value>
   </data>
-  <data name="Form.OptionDialog._serialCountLabel">
+  <data name="Form.OptionDialog._serialCountLabel" xml:space="preserve">
     <value>Number of listed serial &amp;ports</value>
   </data>
-  <data name="Form.OptionDialog._showToolBar">
+  <data name="Form.OptionDialog._showToolBar" xml:space="preserve">
     <value>Display tool&amp;bar</value>
   </data>
-  <data name="Form.OptionDialog._showTabBar">
+  <data name="Form.OptionDialog._showTabBar" xml:space="preserve">
     <value>Display &amp;tabbar</value>
   </data>
-  <data name="Form.OptionDialog._showStatusBar">
+  <data name="Form.OptionDialog._showStatusBar" xml:space="preserve">
     <value>Display &amp;statusbar</value>
   </data>
-  <data name="Form.OptionDialog._askCloseOnExit">
+  <data name="Form.OptionDialog._askCloseOnExit" xml:space="preserve">
     <value>&amp;Warn on closing window if active connections exist</value>
   </data>
-  <data name="Form.OptionDialog._quitAppWithLastPane">
+  <data name="Form.OptionDialog._quitAppWithLastPane" xml:space="preserve">
     <value>&amp;Quit application when the last connection is closed</value>
   </data>
-  <data name="Form.OptionDialog._optionPreservePlaceLabel">
+  <data name="Form.OptionDialog._optionPreservePlaceLabel" xml:space="preserve">
     <value>Storage destination of &amp;option settings</value>
   </data>
-  <data name="Form.OptionDialog._languageLabel">
+  <data name="Form.OptionDialog._languageLabel" xml:space="preserve">
     <value>&amp;Language</value>
   </data>
-  <data name="Form.OptionDialog._startupOptionLabel">
+  <data name="Form.OptionDialog._startupOptionLabel" xml:space="preserve">
     <value>Action with &amp;startup</value>
   </data>
-  <data name="Form.OptionDialog._tabBarGroup">
+  <data name="Form.OptionDialog._tabBarGroup" xml:space="preserve">
     <value>Alignment</value>
   </data>
-  <data name="Form.OptionDialog._tabStyleLabel">
+  <data name="Form.OptionDialog._tabStyleLabel" xml:space="preserve">
     <value>Styl&amp;e</value>
   </data>
-  <data name="Form.OptionDialog._splitterRatioBox">
+  <data name="Form.OptionDialog._splitterRatioBox" xml:space="preserve">
     <value>&amp;Reserve the proportion of the splitter on resize</value>
   </data>
-  <data name="Caption.OptionDialog.CaretStyle0">
+  <data name="Caption.OptionDialog.CaretStyle0" xml:space="preserve">
     <value>Box</value>
   </data>
-  <data name="Caption.OptionDialog.CaretStyle1">
+  <data name="Caption.OptionDialog.CaretStyle1" xml:space="preserve">
     <value>Bar</value>
   </data>
-  <data name="Caption.OptionDialog.CaretStyle2">
+  <data name="Caption.OptionDialog.CaretStyle2" xml:space="preserve">
     <value>Underline</value>
   </data>
-  <data name="Message.OptionDialog.InvalidPictureFile">
+  <data name="Message.OptionDialog.InvalidPictureFile" xml:space="preserve">
     <value>{0} is a invalid picture file.</value>
   </data>
-  <data name="Message.OptionDialog.InvalidItem">
+  <data name="Message.OptionDialog.InvalidItem" xml:space="preserve">
     <value>The value of {0} is invalid.</value>
   </data>
-  <data name="Caption.OptionDialog.BufferLineCount">
+  <data name="Caption.OptionDialog.BufferLineCount" xml:space="preserve">
     <value>Buffer size</value>
   </data>
-  <data name="Caption.OptionDialog.MRUCount">
+  <data name="Caption.OptionDialog.MRUCount" xml:space="preserve">
     <value>Number of stored recent connections</value>
   </data>
-  <data name="Caption.OptionDialog.KeepAliveInterval">
+  <data name="Caption.OptionDialog.KeepAliveInterval" xml:space="preserve">
     <value>Keep Alive interval</value>
   </data>
-  <data name="Message.OptionDialog.EmptyLogDirectory">
+  <data name="Message.OptionDialog.EmptyLogDirectory" xml:space="preserve">
     <value>The log directory is empty.</value>
   </data>
-  <data name="Message.OptionDialog.AskCreateDirectory">
+  <data name="Message.OptionDialog.AskCreateDirectory" xml:space="preserve">
     <value>The directory {0} is not exist. Do you want to create?</value>
   </data>
-  <data name="Message.OptionDialog.FailedCreateDirectory">
+  <data name="Message.OptionDialog.FailedCreateDirectory" xml:space="preserve">
     <value>Failed to create directory.</value>
   </data>
-  <data name="Message.OptionDialog.AltKeyOnWin9x">
+  <data name="Message.OptionDialog.AltKeyOnWin9x" xml:space="preserve">
     <value>The role of left and right Alt keys must be identical on Windows98/Me.</value>
   </data>
-  <data name="Caption.OptionDialog.MousewheelAmount">
+  <data name="Caption.OptionDialog.MousewheelAmount" xml:space="preserve">
     <value>Amount of scroll on wheel</value>
   </data>
-  <data name="Message.OptionDialog.InvalidWindowSize">
+  <data name="Message.OptionDialog.InvalidWindowSize" xml:space="preserve">
     <value>The value of window size is invalid.</value>
   </data>
-  <data name="Message.OptionDialog.EmptySocksServer">
+  <data name="Message.OptionDialog.EmptySocksServer" xml:space="preserve">
     <value>The SOCKS server name is empty.</value>
   </data>
-  <data name="Caption.OptionDialog.SOCKSPortNumber">
+  <data name="Caption.OptionDialog.SOCKSPortNumber" xml:space="preserve">
     <value>SOCKS port number</value>
   </data>
-  <data name="Caption.OptionDialog.NetworkAddress">
+  <data name="Caption.OptionDialog.NetworkAddress" xml:space="preserve">
     <value>Network address</value>
   </data>
-  <data name="Caption.OptionDialog.SerialPortCount">
+  <data name="Caption.OptionDialog.SerialPortCount" xml:space="preserve">
     <value>Number of serial ports</value>
   </data>
-  <data name="Message.OptionDialog.RegistryWriteAuthWarning">
+  <data name="Message.OptionDialog.RegistryWriteAuthWarning" xml:space="preserve">
     <value>The authority of registry modification is required to change storage location setting.</value>
   </data>
-  <data name="Caption.OptionDialog.DefaultLogDirectory">
+  <data name="Caption.OptionDialog.DefaultLogDirectory" xml:space="preserve">
     <value>Select a directory to store log files.</value>
   </data>
-  <data name="Message.OptionDialog.AskOverwriteToASCIIInput">
+  <data name="Message.OptionDialog.AskOverwriteToASCIIInput" xml:space="preserve">
     <value>The key {0} is used to input ASCII code {1} character. Do you give this command setting priority to the ASCII code?</value>
   </data>
-  <data name="Message.OptionDialog.AskOverwriteCommand">
+  <data name="Message.OptionDialog.AskOverwriteCommand" xml:space="preserve">
     <value>This key is already allocated for the command "{0}". Do you wish to overwrite?</value>
   </data>
-  <data name="Caption.OptionDialog.ActionOnLaunch.Nothing">
+  <data name="Caption.OptionDialog.ActionOnLaunch.Nothing" xml:space="preserve">
     <value>Do nothing</value>
   </data>
-  <data name="Caption.OptionDialog.ActionOnLaunch.NewConnection">
+  <data name="Caption.OptionDialog.ActionOnLaunch.NewConnection" xml:space="preserve">
     <value>Open new connection dialog</value>
   </data>
-  <data name="Caption.OptionDialog.ActionOnLaunch.Macro">
+  <data name="Caption.OptionDialog.ActionOnLaunch.Macro" xml:space="preserve">
     <value>Execute macro - </value>
   </data>
-  <data name="Message.OptionDialog.InvalidAdditionalWordElement">
+  <data name="Message.OptionDialog.InvalidAdditionalWordElement" xml:space="preserve">
     <value>There are invalid characters as word elements.</value>
   </data>
-  <data name="Message.OptionDialog.AskJapaneseFont">
+  <data name="Message.OptionDialog.AskJapaneseFont" xml:space="preserve">
     <value>If Japanese font is not installed in your computer, the window will be shown incorrectly. Do you wish to continue?</value>
   </data>
-  <data name="Message.HostKeyChecker.AskHostKeyRegister">
+  <data name="Message.HostKeyChecker.AskHostKeyRegister" xml:space="preserve">
     <value>The public key of the SSH server is not cached in ssh_known_hosts. Do you wish to register it and continue?</value>
   </data>
-  <data name="Message.HostKeyChecker.AskHostKeyRenew">
+  <data name="Message.HostKeyChecker.AskHostKeyRenew" xml:space="preserve">
     <value>The public key of the SSH server differs from the old key in ssh_known_hosts. Do you wish to renew it and continue?</value>
   </data>
-  <data name="Menu.GenerateKeyPair">
+  <data name="Menu.GenerateKeyPair" xml:space="preserve">
     <value>SSH &amp;key generation wizard...</value>
   </data>
-  <data name="Menu.ChangePassphrase">
+  <data name="Menu.ChangePassphrase" xml:space="preserve">
     <value>Change &amp;passphrase of private key...</value>
   </data>
-  <data name="Menu.AgentKeyListDialog">
+  <data name="Menu.AgentKeyListDialog" xml:space="preserve">
     <value>Agent &amp;Forwarding...</value>
   </data>
-  <data name="Form.KeyGenWizard._confirmLabel">
+  <data name="Form.KeyGenWizard._confirmLabel" xml:space="preserve">
     <value>&amp;Confirm</value>
   </data>
-  <data name="Form.KeyGenWizard._passphraseLabel">
+  <data name="Form.KeyGenWizard._passphraseLabel" xml:space="preserve">
     <value>&amp;Passphrase</value>
   </data>
-  <data name="Form.KeyGenWizard._bitCountLabel">
+  <data name="Form.KeyGenWizard._bitCountLabel" xml:space="preserve">
     <value>&amp;Bit count</value>
   </data>
-  <data name="Form.KeyGenWizard._algorithmLabel">
+  <data name="Form.KeyGenWizard._algorithmLabel" xml:space="preserve">
     <value>&amp;Algorithm</value>
   </data>
-  <data name="Form.KeyGenWizard._promptLabel1">
+  <data name="Form.KeyGenWizard._promptLabel1" xml:space="preserve">
     <value>This wizard generates a key for SSH2 authentication. Please input the algorithm, bit count, and passphrase.</value>
   </data>
-  <data name="Form.KeyGenWizard._nextButton">
+  <data name="Form.KeyGenWizard._nextButton" xml:space="preserve">
     <value>Next</value>
   </data>
-  <data name="Form.KeyGenWizard._keygenLabel">
+  <data name="Form.KeyGenWizard._keygenLabel" xml:space="preserve">
     <value>Now generating...  Please move the mouse in this window to feed random numbers.</value>
   </data>
-  <data name="Form.KeyGenWizard._storePrivateKey">
+  <data name="Form.KeyGenWizard._storePrivateKey" xml:space="preserve">
     <value>Save &amp;private key as...</value>
   </data>
-  <data name="Form.KeyGenWizard._storeSECSHPublicKeyButton">
+  <data name="Form.KeyGenWizard._storeSECSHPublicKeyButton" xml:space="preserve">
     <value>Save public key in &amp;SECSH format as...</value>
   </data>
-  <data name="Form.KeyGenWizard._storeOpenSSHPublicKeyButton">
+  <data name="Form.KeyGenWizard._storeOpenSSHPublicKeyButton" xml:space="preserve">
     <value>Save public key in &amp;OpenSSH format as...</value>
   </data>
-  <data name="Form.KeyGenWizard._completeLabel">
+  <data name="Form.KeyGenWizard._completeLabel" xml:space="preserve">
     <value>Genaration completed. Please put the private key at local and the public key at remote host.</value>
   </data>
-  <data name="Form.KeyGenWizard.Text">
+  <data name="Form.KeyGenWizard.Text" xml:space="preserve">
     <value>SSH key generation wizard</value>
   </data>
-  <data name="Message.KeyGenWizard.NotMatch">
+  <data name="Message.KeyGenWizard.NotMatch" xml:space="preserve">
     <value>The passphrase does not match the confirmation input.</value>
   </data>
-  <data name="Message.KeyGenWizard.ConfirmEmptyPassphrase">
+  <data name="Message.KeyGenWizard.ConfirmEmptyPassphrase" xml:space="preserve">
     <value>Do you wish to generate the key with empty passphrase?</value>
   </data>
-  <data name="Message.KeyGenWizard.Finish">
+  <data name="Message.KeyGenWizard.Finish" xml:space="preserve">
     <value>Finish</value>
   </data>
-  <data name="Message.KeyGenWizard.RandomNumberCompleted">
+  <data name="Message.KeyGenWizard.RandomNumberCompleted" xml:space="preserve">
     <value>Acquisition of random numbers has been finished. Please wait until key generation is completed. This process may take several minutes.</value>
   </data>
-  <data name="Message.KeyGenWizard.GenerationCompleted">
+  <data name="Message.KeyGenWizard.GenerationCompleted" xml:space="preserve">
     <value>The key generation is completed.</value>
   </data>
-  <data name="Caption.KeyGenWizard.SavePrivateKey">
+  <data name="Caption.KeyGenWizard.SavePrivateKey" xml:space="preserve">
     <value>Save private key</value>
   </data>
-  <data name="Message.KeyGenWizard.KeySaveError">
+  <data name="Message.KeyGenWizard.KeySaveError" xml:space="preserve">
     <value>Failed to save the key. {0}</value>
   </data>
-  <data name="Caption.KeyGenWizard.SavePublicInSECSH">
+  <data name="Caption.KeyGenWizard.SavePublicInSECSH" xml:space="preserve">
     <value>Save public key in SECSH format</value>
   </data>
-  <data name="Caption.KeyGenWizard.SavePublicInOpenSSH">
+  <data name="Caption.KeyGenWizard.SavePublicInOpenSSH" xml:space="preserve">
     <value>Save public key in OpenSSH format</value>
   </data>
-  <data name="Form.AgentKeyListDialog.Text">
+  <data name="Form.AgentKeyListDialog.Text" xml:space="preserve">
     <value>Private Key List for Agent Forwarding</value>
   </data>
-  <data name="Form.AgentKeyListDialog._filenameHeader">
+  <data name="Form.AgentKeyListDialog._filenameHeader" xml:space="preserve">
     <value>File Name</value>
   </data>
-  <data name="Form.AgentKeyListDialog._statusHeader">
+  <data name="Form.AgentKeyListDialog._statusHeader" xml:space="preserve">
     <value>Status</value>
   </data>
-  <data name="Form.AgentKeyListDialog._commentHeader">
+  <data name="Form.AgentKeyListDialog._commentHeader" xml:space="preserve">
     <value>Comment</value>
   </data>
-  <data name="Form.AgentKeyListDialog._addButton">
+  <data name="Form.AgentKeyListDialog._addButton" xml:space="preserve">
     <value>&amp;Add...</value>
   </data>
-  <data name="Form.AgentKeyListDialog._removeButton">
+  <data name="Form.AgentKeyListDialog._removeButton" xml:space="preserve">
     <value>&amp;Remove</value>
   </data>
-  <data name="Form.InputPassphraseDialog.Text">
+  <data name="Form.InputPassphraseDialog.Text" xml:space="preserve">
     <value>Input Passphrase</value>
   </data>
-  <data name="Form.InputPassphraseDialog._fileNameLabel">
+  <data name="Form.InputPassphraseDialog._fileNameLabel" xml:space="preserve">
     <value>File Name</value>
   </data>
-  <data name="Form.InputPassphraseDialog._passphraseLabel">
+  <data name="Form.InputPassphraseDialog._passphraseLabel" xml:space="preserve">
     <value>&amp;Passphrase</value>
   </data>
-  <data name="Form.ChangePassphrase._lKeyFile">
+  <data name="Form.ChangePassphrase._lKeyFile" xml:space="preserve">
     <value>Private key &amp;file</value>
   </data>
-  <data name="Form.ChangePassphrase._lCurrentPassphrase">
+  <data name="Form.ChangePassphrase._lCurrentPassphrase" xml:space="preserve">
     <value>&amp;Current passphrase</value>
   </data>
-  <data name="Form.ChangePassphrase._lNewPassphrase">
+  <data name="Form.ChangePassphrase._lNewPassphrase" xml:space="preserve">
     <value>&amp;New passphrase</value>
   </data>
-  <data name="Form.ChangePassphrase._lNewPassphraseAgain">
+  <data name="Form.ChangePassphrase._lNewPassphraseAgain" xml:space="preserve">
     <value>Input &amp;again</value>
   </data>
-  <data name="Form.ChangePassphrase.Text">
+  <data name="Form.ChangePassphrase.Text" xml:space="preserve">
     <value>Change passphrase</value>
   </data>
-  <data name="Message.ChangePassphrase.PassphraseMismatch">
+  <data name="Message.ChangePassphrase.PassphraseMismatch" xml:space="preserve">
     <value>The new passphrase does not match the confirmation input.</value>
   </data>
-  <data name="Message.ChangePassphrase.AskEmptyPassphrase">
+  <data name="Message.ChangePassphrase.AskEmptyPassphrase" xml:space="preserve">
     <value>The new passphrase is empty. Do you wish to leave the passphrase empty?</value>
   </data>
-  <data name="Message.ChangePassphrase.NotifyChanged">
+  <data name="Message.ChangePassphrase.NotifyChanged" xml:space="preserve">
     <value>The passphrase has been changed.</value>
   </data>
-  <data name="Message.KeyAgent.FileNotExist">
+  <data name="Message.KeyAgent.FileNotExist" xml:space="preserve">
     <value>{0} is not a valid file.</value>
   </data>
-  <data name="Caption.PreferenceEditor.Bool">
+  <data name="Caption.PreferenceEditor.Bool" xml:space="preserve">
     <value>Bool</value>
   </data>
-  <data name="Caption.PreferenceEditor.Int">
+  <data name="Caption.PreferenceEditor.Int" xml:space="preserve">
     <value>Integer</value>
   </data>
-  <data name="Caption.PreferenceEditor.String">
+  <data name="Caption.PreferenceEditor.String" xml:space="preserve">
     <value>String</value>
   </data>
-  <data name="Form.PreferenceEditor._nameHeader">
+  <data name="Form.PreferenceEditor._nameHeader" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="Form.PreferenceEditor._typeHeader">
+  <data name="Form.PreferenceEditor._typeHeader" xml:space="preserve">
     <value>Type</value>
   </data>
-  <data name="Form.PreferenceEditor._valueHeader">
+  <data name="Form.PreferenceEditor._valueHeader" xml:space="preserve">
     <value>Value</value>
   </data>
-  <data name="Form.PreferenceEditor._filterLabel">
+  <data name="Form.PreferenceEditor._filterLabel" xml:space="preserve">
     <value>&amp;Filter</value>
   </data>
-  <data name="Form.PreferenceEditor._resetButton">
+  <data name="Form.PreferenceEditor._resetButton" xml:space="preserve">
     <value>&amp;Reset All</value>
   </data>
-  <data name="Form.PreferenceEditor.Text">
+  <data name="Form.PreferenceEditor.Text" xml:space="preserve">
     <value>Detailed preference editor</value>
   </data>
-  <data name="Command.PreferenceEditor">
+  <data name="Command.PreferenceEditor" xml:space="preserve">
     <value>Detailed preference editor</value>
   </data>
-  <data name="Menu.PreferenceEditor">
+  <data name="Menu.PreferenceEditor" xml:space="preserve">
     <value>&amp;Detailed preference editor...</value>
   </data>
-  <data name="Form.PreferenceItemEditor.Text">
+  <data name="Form.PreferenceItemEditor.Text" xml:space="preserve">
     <value>Edit item</value>
   </data>
-  <data name="Form.PreferenceItemEditor._nameLabel">
+  <data name="Form.PreferenceItemEditor._nameLabel" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="Form.PreferenceItemEditor._valueLabel">
+  <data name="Form.PreferenceItemEditor._valueLabel" xml:space="preserve">
     <value>&amp;Value</value>
   </data>
-  <data name="Form.PreferenceItemEditor._resetButton">
+  <data name="Form.PreferenceItemEditor._resetButton" xml:space="preserve">
     <value>&amp;Reset</value>
   </data>
-  <data name="Form.ShellSchemeEditor.Text">
+  <data name="Form.ShellSchemeEditor.Text" xml:space="preserve">
     <value>Shell scheme editor</value>
   </data>
-  <data name="Form.ShellSchemeEditor._schemeCollectionGroup">
+  <data name="Form.ShellSchemeEditor._schemeCollectionGroup" xml:space="preserve">
     <value>Shell scheme list</value>
   </data>
-  <data name="Form.ShellSchemeEditor._deleteSchemeButton">
+  <data name="Form.ShellSchemeEditor._deleteSchemeButton" xml:space="preserve">
     <value>&amp;Delete</value>
   </data>
-  <data name="Form.ShellSchemeEditor._newSchemeButton">
+  <data name="Form.ShellSchemeEditor._newSchemeButton" xml:space="preserve">
     <value>&amp;New</value>
   </data>
-  <data name="Form.ShellSchemeEditor._schemeLabel">
+  <data name="Form.ShellSchemeEditor._schemeLabel" xml:space="preserve">
     <value>&amp;Scheme</value>
   </data>
-  <data name="Form.ShellSchemeEditor._deleteCharLabel">
+  <data name="Form.ShellSchemeEditor._deleteCharLabel" xml:space="preserve">
     <value>Code to &amp;remove 1 char</value>
   </data>
-  <data name="Form.ShellSchemeEditor._nameLabel">
+  <data name="Form.ShellSchemeEditor._nameLabel" xml:space="preserve">
     <value>N&amp;ame</value>
   </data>
-  <data name="Form.ShellSchemeEditor._promptLabel">
+  <data name="Form.ShellSchemeEditor._promptLabel" xml:space="preserve">
     <value>&amp;Prompt(RegEx)</value>
   </data>
-  <data name="Form.ShellSchemeEditor._deleteButton">
+  <data name="Form.ShellSchemeEditor._deleteButton" xml:space="preserve">
     <value>D&amp;elete command</value>
   </data>
-  <data name="Form.ShellSchemeEditor._alphabeticalSort">
+  <data name="Form.ShellSchemeEditor._alphabeticalSort" xml:space="preserve">
     <value>&amp;Sort alphabetical order</value>
   </data>
-  <data name="Form.ShellSchemeEditor._currentSchemeGroup">
+  <data name="Form.ShellSchemeEditor._currentSchemeGroup" xml:space="preserve">
     <value>Scheme - {0}</value>
   </data>
-  <data name="Form.ShellSchemeEditor._itemLabel">
+  <data name="Form.ShellSchemeEditor._itemLabel" xml:space="preserve">
     <value>Command list</value>
   </data>
-  <data name="Menu.ShellSchemeEditor">
+  <data name="Menu.ShellSchemeEditor" xml:space="preserve">
     <value>&amp;Shell scheme editor...</value>
   </data>
-  <data name="Command.ShellSchemeEditor">
+  <data name="Command.ShellSchemeEditor" xml:space="preserve">
     <value>Shell scheme editor</value>
   </data>
-  <data name="Message.ShellSchemeEditor.DuplicatedName">
+  <data name="Message.ShellSchemeEditor.DuplicatedName" xml:space="preserve">
     <value>Duplicated name is found.</value>
   </data>
-  <data name="Message.ShellSchemeEditor.EmptyName">
+  <data name="Message.ShellSchemeEditor.EmptyName" xml:space="preserve">
     <value>The scheme name is empty.</value>
   </data>
-  <data name="Message.ShellSchemeEditor.PromptError">
+  <data name="Message.ShellSchemeEditor.PromptError" xml:space="preserve">
     <value>The prompt must be a correct regular expression.</value>
   </data>
-  <data name="Enum.StartupAction.DoNothing">
+  <data name="Enum.StartupAction.DoNothing" xml:space="preserve">
     <value>Do Nothing</value>
   </data>
-  <data name="Enum.StartupAction.TelnetSSHDialog">
+  <data name="Enum.StartupAction.TelnetSSHDialog" xml:space="preserve">
     <value>Open Telnet/SSH Login Dialog</value>
   </data>
-  <data name="Enum.StartupAction.OpenCygwin">
+  <data name="Enum.StartupAction.OpenCygwin" xml:space="preserve">
     <value>Open Cygwin Connection</value>
   </data>
-  <data name="Message.AboutBox.EnterGuevara">
+  <data name="Message.AboutBox.EnterGuevara" xml:space="preserve">
     <value>Welcome to Guevara Mode. Poderosa was called Guevara old days.</value>
   </data>
-  <data name="Message.AboutBox.ExitGuevara">
+  <data name="Message.AboutBox.ExitGuevara" xml:space="preserve">
     <value>Now Leaving Guevara Mode</value>
   </data>
-  <data name="Form.AboutBox.Text">
+  <data name="Form.AboutBox.Text" xml:space="preserve">
     <value>About Poderosa</value>
+  </data>
+  <data name="Menu.MRU" xml:space="preserve">
+    <value>Sessions</value>
   </data>
 </root>

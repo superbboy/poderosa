@@ -267,7 +267,7 @@ namespace Granados.PKI {
                 byte[] b = new byte[1];
                 rand.NextBytes(b);
                 while (b[0] == 0)
-                    rand.NextBytes(b); //0�ł͂��߂�
+                    rand.NextBytes(b); //0ではだめだ
                 pad[i] = b[0];
             }
 

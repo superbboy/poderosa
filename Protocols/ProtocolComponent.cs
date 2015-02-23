@@ -29,7 +29,7 @@ namespace Poderosa.Protocols {
             if (_enumerator == null)
                 _enumerator = _monitors.GetEnumerator();
             else
-                _enumerator.Reset(); //TODO ƒRƒŒƒNƒVƒ‡ƒ“‚Ì’†g•Ï‚í‚Á‚Ä‚àReset‚ª—LŒø‚È‚±‚Æ‚ğŠm”F
+                _enumerator.Reset(); //TODO ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã®ä¸­èº«å¤‰ã‚ã£ã¦ã‚‚ResetãŒæœ‰åŠ¹ãªã“ã¨ã‚’ç¢ºèª
         }
     }
 

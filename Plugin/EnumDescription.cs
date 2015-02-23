@@ -14,7 +14,7 @@ using System.Diagnostics;
 
 namespace Poderosa.Util {
 
-    //������enum�l�ɕ\�L�������葊�ݕϊ������肷��@�\����
+    //整数のenum値に表記をつけたり相互変換したりする　構造上
     /// <summary>
     /// 
     /// </summary>

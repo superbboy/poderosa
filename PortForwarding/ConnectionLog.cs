@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Poderosa.PortForwarding {
     /// <summary>
-    /// ConnectionLog ‚ÌŠT—v‚Ìà–¾‚Å‚·B
+    /// ConnectionLog ã®æ¦‚è¦ã®èª¬æ˜ã§ã™ã€‚
     /// </summary>
     internal class ConnectionLog {
         private StreamWriter _strm;

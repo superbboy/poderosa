@@ -50,7 +50,7 @@ namespace Poderosa.Util {
                 _list.Clear();
         }
 
-        //�����͈��Listener���o�^����Ȃ��B�x���쐬����
+        //多くは一つもListenerが登録されない。遅延作成する
         private void Precheck() {
             if (_list == null)
                 _list = new LinkedList<T>();
@@ -58,7 +58,7 @@ namespace Poderosa.Util {
 
     }
 
-    //���X�i�̓o�^�E�폜�C���^�t�F�[�X
+    //リスナの登録・削除インタフェース
     /// <summary>
     /// 
     /// </summary>

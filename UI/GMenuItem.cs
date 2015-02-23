@@ -57,8 +57,8 @@ namespace Poderosa.UI {
             }
         }
 
-        //NOTE Popup���R�[�h����쓮���邱�Ƃ͂ł��Ȃ��B���A���ꂾ�ƃe�X�g�̂Ƃ�����B
-        //���łɁA�����Ɩ�肠��W��EventHandler������A������delegate�ɂ���
+        //NOTE Popupをコードから駆動することはできない。が、それだとテストのとき困る。
+        //ついでに、何かと問題ある標準EventHandlerを避け、ただのdelegateにする
         protected override void OnPopup(EventArgs e) {
             base.OnPopup(e);
             PerformPopup();

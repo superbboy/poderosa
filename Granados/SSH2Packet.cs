@@ -138,6 +138,8 @@ namespace Granados.SSH2 {
         private bool _head_is_available;
         private int _sequence;
         private Cipher _cipher;
+        private volatile bool _waitingNewCipher;
+        private readonly object _cipherSync = new object();
         private MAC _mac;
         private bool _macEnabled;
 
@@ -153,22 +155,48 @@ namespace Granados.SSH2 {
             _cipher = null;
             _mac = null;
             _head = null;
+            _waitingNewCipher = false;
         }
 
         public void SetCipher(Cipher cipher, MAC mac, bool mac_enabled) {
-            _cipher = cipher;
-            _mac = mac;
-            _macEnabled = mac_enabled;
-            _head = new byte[cipher.BlockSize];
+            lock (_cipherSync) {
+                if (_waitingNewCipher) {
+                    _cipher = cipher;
+                    _mac = mac;
+                    _macEnabled = mac_enabled;
+                    _head = new byte[cipher.BlockSize];
+                    _waitingNewCipher = false;
+                    Monitor.PulseAll(_cipherSync);
+                }
+            }
         }
 
         public override void OnData(DataFragment data) {
             try {
                 _buffer.Append(data);
 
-                //‚±‚±‚Å•¡”ƒpƒPƒbƒg‚ðˆêŠ‡‚µ‚ÄŽó‚¯Žæ‚Á‚½ê‡‚ðl—¶‚µ‚Ä‚¢‚é
+                //ã“ã“ã§è¤‡æ•°ãƒ‘ã‚±ãƒƒãƒˆã‚’ä¸€æ‹¬ã—ã¦å—ã‘å–ã£ãŸå ´åˆã‚’è€ƒæ…®ã—ã¦ã„ã‚‹
                 while (ConstructPacket()) {
-                    _inner_handler.OnData(_packet);
+                    if (_packet.Length >= 1 && _packet.ByteAt(0) == (byte)PacketType.SSH_MSG_NEWKEYS) {
+                        // next packet must be decrypted with the new key
+                        lock (_cipherSync) {
+                            _waitingNewCipher = true;
+                            // Note: SSH2SynchronizedPacketReceiver.OnData() queue the packet then
+                            //       wait until the packet is dequeued
+                            _inner_handler.OnData(_packet);
+                            Monitor.Wait(_cipherSync, 1000);
+                            if (_waitingNewCipher) {
+                                // something is going wrong...
+                                _waitingNewCipher = false;
+                                _cipher = null;
+                                _mac = null;
+                                _macEnabled = false;
+                                _head = null;
+                            }
+                        }
+                    } else {
+                        _inner_handler.OnData(_packet);
+                    }
                 }
 
             }
@@ -179,7 +207,7 @@ namespace Granados.SSH2 {
 
         //returns true if a new packet is obtained to _packet
         private bool ConstructPacket() {
-            if (_cipher == null) { //ˆÃ†‚ªŠm—§‚·‚é‘O
+            if (_cipher == null) { //æš—å·ãŒç¢ºç«‹ã™ã‚‹å‰
                 if (_buffer.Length < PACKET_LENGTH_FIELD_LEN)
                     return false;
                 int len = SSHUtil.ReadInt32(_buffer.Data, _buffer.Offset);

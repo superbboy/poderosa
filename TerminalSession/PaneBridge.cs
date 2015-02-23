@@ -38,11 +38,11 @@ namespace Poderosa.Terminal {
         }
     }
 
-    //TerminalControl‚Éƒrƒ…[‹@”\‚ð—^‚¦‚éƒNƒ‰ƒX
+    //TerminalControlã«ãƒ“ãƒ¥ãƒ¼æ©Ÿèƒ½ã‚’ä¸Žãˆã‚‹ã‚¯ãƒ©ã‚¹
     internal class TerminalView : IPoderosaView, IContentReplaceableViewSite, IGeneralViewCommands {
         private IPoderosaForm _parent;
         private TerminalControl _control;
-        private IContentReplaceableView _contentReplaceableView; //•ïŠÜ‚·‚é‚â‚Â
+        private IContentReplaceableView _contentReplaceableView; //åŒ…å«ã™ã‚‹ã‚„ã¤
         private IPoderosaCommand _copyCommand;
         private PasteToTerminalCommand _pasteCommand;
 

@@ -176,6 +176,7 @@ namespace Poderosa.Sessions {
                 if (window == null)
                     return CommandResult.Ignored;
                 TelnetSSHLoginDialog dlg = new TelnetSSHLoginDialog(window);
+                //TableTelnetSSHDialog dlg = new TableTelnetSSHDialog(window);
 
                 dlg.ApplyParam();
 

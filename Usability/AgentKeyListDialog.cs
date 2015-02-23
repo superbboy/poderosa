@@ -54,7 +54,7 @@ namespace Poderosa.Forms {
             Debug.Assert(key != null);
 
             if (key.Status == PrivateKeyStatus.OK)
-                return; //Šù‚ÉŠm”FÏ‚İ
+                return; //å©›åµå¦‹æ“£åµªå‚’
 
             if (key.GuessValidKeyFileOrWarn(this)) {
                 InputPassphraseDialog dlg = new InputPassphraseDialog(key);

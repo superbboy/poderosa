@@ -51,7 +51,7 @@ namespace Poderosa.Commands {
                 }
             }
 
-            //TODO �����̂Ƃ��Ƀ_�C�A���O���o���Ē��r�L�����Z���\��
+            //TODO 長文のときにダイアログを出して中途キャンセル可能に
             StringReader reader = new StringReader(data);
             output.SendTextStream(reader, data[data.Length - 1] == '\n');
             return CommandResult.Succeeded;
@@ -65,7 +65,7 @@ namespace Poderosa.Commands {
             return TerminalSessionsPlugin.Instance.PoderosaWorld.AdapterManager.GetAdapter(this, adapter);
         }
 
-        //���M�\��Ԃł���Ƃ��̂�TerminalSession��Ԃ�
+        //送信可能状態であるときのみTerminalSessionを返す
         private ITerminalSession GetSession() {
             if (!_control.EnabledEx)
                 return null;

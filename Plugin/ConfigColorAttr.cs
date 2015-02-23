@@ -10,7 +10,7 @@ using System.Drawing;
 
 namespace Poderosa {
 #if false
-    //Color‚ğ’¼ÚAttribute‚Ì’è‹`‚Ég‚¤‚±‚Æ‚Í‚Å‚«‚È‚¢I
+    //Colorã‚’ç›´æ¥Attributeã®å®šç¾©ã«ä½¿ã†ã“ã¨ã¯ã§ããªã„ï¼
     public enum LateBindColors {
         Empty,
         Window,

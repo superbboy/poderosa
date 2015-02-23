@@ -1,4 +1,4 @@
-﻿namespace Poderosa.Forms {
+namespace Poderosa.Forms {
     partial class PluginList {
         /// <summary>
         /// 必要なデザイナ変数です。

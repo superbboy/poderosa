@@ -17,8 +17,8 @@ namespace Poderosa.Plugins {
         private IPlugin _ownerPlugin;
         private string _id;
         private Type _extensionType;
-        private ArrayList _extensions; //ToArray()の型付きを考慮してArrayList
-        private bool _isDirty; //_extensionsの中身が変化すると立つフラグ
+        private ArrayList _extensions; //ToArray()縺ｮ蝙倶ｻ倥″繧定�諷ｮ縺励※ArrayList
+        private bool _isDirty; //_extensions縺ｮ荳ｭ霄ｫ縺悟､牙喧縺吶ｋ縺ｨ遶九▽繝輔Λ繧ｰ
         private Array _extensionArray;
 
         public ExtensionPoint(string id, Type extensionType, IPlugin owner) {

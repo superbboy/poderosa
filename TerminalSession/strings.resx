@@ -1,270 +1,382 @@
-﻿<root>
-  <resheader name="ResMimeType">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
-  <resheader name="Version">
-    <value>1.0.0.0</value>
+  <resheader name="version">
+    <value>2.0</value>
   </resheader>
-  <resheader name="Reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <resheader name="Writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Common.OK">
+  <data name="Common.OK" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="Common.Cancel">
+  <data name="Common.Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="Common.DoNot">
+  <data name="Common.DoNot" xml:space="preserve">
     <value>Don't</value>
   </data>
-  <data name="Common.Do">
+  <data name="Common.Do" xml:space="preserve">
     <value>Do</value>
   </data>
-  <data name="Caption.Disconnected">
+  <data name="Caption.Disconnected" xml:space="preserve">
     <value>(Disconnected)</value>
   </data>
-  <data name="Caption.HowToCancel">
+  <data name="Caption.HowToCancel" xml:space="preserve">
     <value>ESC to stop</value>
   </data>
-  <data name="CommandCategory.Connection">
+  <data name="CommandCategory.Connection" xml:space="preserve">
     <value>Connection</value>
   </data>
-  <data name="Command.TelnetSSH">
+  <data name="Command.TelnetSSH" xml:space="preserve">
     <value>Connect by Telnet/SSH</value>
   </data>
-  <data name="Command.Cygwin">
+  <data name="Command.Cygwin" xml:space="preserve">
     <value>Connect Cygwin</value>
   </data>
-  <data name="Command.TerminalReproduce">
+  <data name="Command.TerminalReproduce" xml:space="preserve">
     <value>Reproduce / Revive Connection</value>
   </data>
-  <data name="Form.CygwinLoginDialog._homeDirectoryLabel">
+  <data name="Form.CygwinLoginDialog._homeDirectoryLabel" xml:space="preserve">
     <value>&amp;Home directory</value>
   </data>
-  <data name="Form.CygwinLoginDialog._lMessage">
+  <data name="Form.CygwinLoginDialog._lMessage" xml:space="preserve">
     <value>If you cannot start the shell, please re-compile CygTerm.</value>
   </data>
-  <data name="Form.CygwinLoginDialog._advancedOptionCheck">
+  <data name="Form.CygwinLoginDialog._advancedOptionCheck" xml:space="preserve">
     <value>&amp;Advanced configuration</value>
   </data>
-  <data name="Form.CygwinLoginDialog._shellLabel">
+  <data name="Form.CygwinLoginDialog._shellLabel" xml:space="preserve">
     <value>&amp;Shell</value>
   </data>
-  <data name="Form.CygwinLoginDialog.TextCygwin">
+  <data name="Form.CygwinLoginDialog.TextCygwin" xml:space="preserve">
     <value>Connection to Cygwin</value>
   </data>
-  <data name="Form.CygwinLoginDialog.TextSFU">
+  <data name="Form.CygwinLoginDialog.TextSFU" xml:space="preserve">
     <value>Connection to SFU</value>
   </data>
-  <data name="Form.CygwinLoginDialog._logTypeLabel">
+  <data name="Form.CygwinLoginDialog._logTypeLabel" xml:space="preserve">
     <value>Log &amp;type</value>
   </data>
-  <data name="Form.CygwinLoginDialog._logFileLabel">
+  <data name="Form.CygwinLoginDialog._logFileLabel" xml:space="preserve">
     <value>&amp;Log file</value>
   </data>
-  <data name="Form.CygwinLoginDialog._encodingLabel">
+  <data name="Form.CygwinLoginDialog._encodingLabel" xml:space="preserve">
     <value>&amp;Encoding</value>
   </data>
-  <data name="Form.CygwinLoginDialog._terminalTypeLabel">
+  <data name="Form.CygwinLoginDialog._terminalTypeLabel" xml:space="preserve">
     <value>Terminal T&amp;ype</value>
   </data>
-  <data name="Form.CygwinLoginDialog._cygwinDirLabel">
+  <data name="Form.CygwinLoginDialog._cygwinDirLabel" xml:space="preserve">
     <value>Cygwin &amp;Directory (optional)</value>
   </data>
-  <data name="Form.CygwinLoginDialog.SelectCygwinDir">
+  <data name="Form.CygwinLoginDialog.SelectCygwinDir" xml:space="preserve">
     <value>Select Cygwin Directory</value>
   </data>
-  <data name="Form.CygwinLoginDialog._autoExecMacroPathLabel">
+  <data name="Form.CygwinLoginDialog._autoExecMacroPathLabel" xml:space="preserve">
     <value>Auto Exec Macro</value>
   </data>
-  <data name="Message.CygwinLoginDialog.EmptyHomeDirectory">
+  <data name="Message.CygwinLoginDialog.EmptyHomeDirectory" xml:space="preserve">
     <value>The home directory is empty.</value>
   </data>
-  <data name="Message.CygwinLoginDialog.EmptyShell">
+  <data name="Message.CygwinLoginDialog.EmptyShell" xml:space="preserve">
     <value>The shell is empty.</value>
   </data>
-  <data name="Caption.CygwinLoginDialog.ConnectingCygwin">
+  <data name="Caption.CygwinLoginDialog.ConnectingCygwin" xml:space="preserve">
     <value>Connection to Cygwin - Connecting... (Ctrl+C to Stop)</value>
   </data>
-  <data name="Caption.CygwinLoginDialog.ConnectingSFU">
+  <data name="Caption.CygwinLoginDialog.ConnectingSFU" xml:space="preserve">
     <value>Connection to SFU - Connecting... (Ctrl+C to Stop)</value>
   </data>
-  <data name="Message.CygwinLoginDialog.ConnectionError">
+  <data name="Message.CygwinLoginDialog.ConnectionError" xml:space="preserve">
     <value>Connection Error</value>
   </data>
-  <data name="Form.LoginDialog._hostLabel">
+  <data name="Form.LoginDialog._hostLabel" xml:space="preserve">
     <value>&amp;Host</value>
   </data>
-  <data name="Form.LoginDialog._portLabel">
+  <data name="Form.LoginDialog._portLabel" xml:space="preserve">
     <value>Por&amp;t</value>
   </data>
-  <data name="Form.LoginDialog._methodLabel">
+  <data name="Form.LoginDialog._methodLabel" xml:space="preserve">
     <value>P&amp;rotocol</value>
   </data>
-  <data name="Form.LoginDialog._sshGroup">
+  <data name="Form.LoginDialog._sshGroup" xml:space="preserve">
     <value>SSH Parameters</value>
   </data>
-  <data name="Form.LoginDialog._privateKeyLabel">
+  <data name="Form.LoginDialog._privateKeyLabel" xml:space="preserve">
     <value>&amp;Key File</value>
   </data>
-  <data name="Form.LoginDialog._authenticationLabel">
+  <data name="Form.LoginDialog._authenticationLabel" xml:space="preserve">
     <value>A&amp;uthentication</value>
   </data>
-  <data name="Form.LoginDialog._passphraseLabel">
+  <data name="Form.LoginDialog._passphraseLabel" xml:space="preserve">
     <value>&amp;Passphrase</value>
   </data>
-  <data name="Form.LoginDialog._usernameLabel">
+  <data name="Form.LoginDialog._usernameLabel" xml:space="preserve">
     <value>&amp;Account</value>
   </data>
-  <data name="Form.LoginDialog._terminalGroup">
+  <data name="Form.LoginDialog._terminalGroup" xml:space="preserve">
     <value>Terminal settings</value>
   </data>
-  <data name="Form.LoginDialog._localEchoLabel">
+  <data name="Form.LoginDialog._localEchoLabel" xml:space="preserve">
     <value>Local ech&amp;o</value>
   </data>
-  <data name="Form.LoginDialog._newLineLabel">
+  <data name="Form.LoginDialog._newLineLabel" xml:space="preserve">
     <value>&amp;New Line</value>
   </data>
-  <data name="Form.LoginDialog._logFileLabel">
+  <data name="Form.LoginDialog._logFileLabel" xml:space="preserve">
     <value>Log &amp;File</value>
   </data>
-  <data name="Form.LoginDialog._encodingLabel">
+  <data name="Form.LoginDialog._encodingLabel" xml:space="preserve">
     <value>&amp;Encoding</value>
   </data>
-  <data name="Form.LoginDialog._logTypeLabel">
+  <data name="Form.LoginDialog._logTypeLabel" xml:space="preserve">
     <value>&amp;Log type</value>
   </data>
-  <data name="Form.LoginDialog._terminalTypeLabel">
+  <data name="Form.LoginDialog._terminalTypeLabel" xml:space="preserve">
     <value>Terminal T&amp;ype</value>
   </data>
-  <data name="Form.LoginDialog._autoExecMacroPathLabel">
+  <data name="Form.LoginDialog._autoExecMacroPathLabel" xml:space="preserve">
     <value>Auto Exec Macro</value>
   </data>
-  <data name="Form.LoginDialog._telnetNewLine">
+  <data name="Form.LoginDialog._telnetNewLine" xml:space="preserve">
     <value>Telnet
 New Line</value>
   </data>
-  <data name="Form.LoginDialog.Text">
+  <data name="Form.LoginDialog.Text" xml:space="preserve">
     <value>New Connection</value>
   </data>
-  <data name="Message.LoginDialog.InvalidPort">
+  <data name="Message.LoginDialog.InvalidPort" xml:space="preserve">
     <value>{0} is not valid as a port.</value>
   </data>
-  <data name="Caption.LoginDialog.Connecting">
+  <data name="Caption.LoginDialog.Connecting" xml:space="preserve">
     <value>New Connection - Connecting... (Ctrl+C to Stop)</value>
   </data>
-  <data name="Message.LoginDialog.HostIsEmpty">
+  <data name="Message.LoginDialog.HostIsEmpty" xml:space="preserve">
     <value>The host name is empty.</value>
   </data>
-  <data name="Message.LoginDialog.KeyFileNotExist">
+  <data name="Message.LoginDialog.KeyFileNotExist" xml:space="preserve">
     <value>The private key file does not exist.</value>
   </data>
-  <data name="Caption.LoginDialog.ConnectionError">
+  <data name="Caption.LoginDialog.ConnectionError" xml:space="preserve">
     <value>Connection error</value>
   </data>
-  <data name="Form.SSHShortcutLoginDialog._privateKeyLabel">
+  <data name="Form.SSHShortcutLoginDialog._privateKeyLabel" xml:space="preserve">
     <value>Private &amp;key</value>
   </data>
-  <data name="Form.SSHShortcutLoginDialog._passphraseLabel">
+  <data name="Form.SSHShortcutLoginDialog._passphraseLabel" xml:space="preserve">
     <value>&amp;Passphrase</value>
   </data>
-  <data name="Form.SSHShortcutLoginDialog._logFileLabel">
+  <data name="Form.SSHShortcutLoginDialog._logFileLabel" xml:space="preserve">
     <value>Log &amp;file</value>
   </data>
-  <data name="Form.SSHShortcutLoginDialog._hostLabel">
+  <data name="Form.SSHShortcutLoginDialog._hostLabel" xml:space="preserve">
     <value>Host</value>
   </data>
-  <data name="Form.SSHShortcutLoginDialog._methodLabel">
+  <data name="Form.SSHShortcutLoginDialog._methodLabel" xml:space="preserve">
     <value>Connection</value>
   </data>
-  <data name="Form.SSHShortcutLoginDialog._accountLabel">
+  <data name="Form.SSHShortcutLoginDialog._accountLabel" xml:space="preserve">
     <value>Account</value>
   </data>
-  <data name="Form.SSHShortcutLoginDialog._authenticationTypeLabel">
+  <data name="Form.SSHShortcutLoginDialog._authenticationTypeLabel" xml:space="preserve">
     <value>Authentication</value>
   </data>
-  <data name="Form.SSHShortcutLoginDialog._encodingLabel">
+  <data name="Form.SSHShortcutLoginDialog._encodingLabel" xml:space="preserve">
     <value>Encoding</value>
   </data>
-  <data name="Form.SSHShortcutLoginDialog._logTypeLabel">
+  <data name="Form.SSHShortcutLoginDialog._logTypeLabel" xml:space="preserve">
     <value>&amp;Log type</value>
   </data>
-  <data name="Form.SSHShortcutLoginDialog._autoExecMacroPathLabel">
+  <data name="Form.SSHShortcutLoginDialog._autoExecMacroPathLabel" xml:space="preserve">
     <value>Auto Exec Macro</value>
   </data>
-  <data name="Form.SSHShortcutLoginDialog.Text">
+  <data name="Form.SSHShortcutLoginDialog.Text" xml:space="preserve">
     <value>SSH Login</value>
   </data>
-  <data name="Caption.SSHShortcutLoginDialog.NotStandardPort">
+  <data name="Caption.SSHShortcutLoginDialog.NotStandardPort" xml:space="preserve">
     <value>(Port {0})</value>
   </data>
-  <data name="Caption.SSHShortcutLoginDialog.Connecting">
+  <data name="Caption.SSHShortcutLoginDialog.Connecting" xml:space="preserve">
     <value>SSH Login - Connecting... (Ctrl+C to Stop)</value>
   </data>
-  <data name="Message.SSHShortcutLoginDialog.ConnectionError">
+  <data name="Message.SSHShortcutLoginDialog.ConnectionError" xml:space="preserve">
     <value>Connection error</value>
   </data>
-  <data name="Message.SSHShortcutLoginDialog.KeyFileNotExist">
+  <data name="Message.SSHShortcutLoginDialog.KeyFileNotExist" xml:space="preserve">
     <value>The private key file does not exist.</value>
   </data>
-  <data name="Menu.NewConnection">
+  <data name="Menu.NewConnection" xml:space="preserve">
     <value>New Telnet/SSH &amp;Connection...</value>
   </data>
-  <data name="Menu.SerialNewConnection">
+  <data name="Menu.SerialNewConnection" xml:space="preserve">
     <value>New S&amp;erial Connection...</value>
   </data>
-  <data name="Menu.CygwinNewConnection">
+  <data name="Menu.CygwinNewConnection" xml:space="preserve">
     <value>New &amp;Cygwin Connection...</value>
   </data>
-  <data name="Menu.SFUNewConnection">
+  <data name="Menu.SFUNewConnection" xml:space="preserve">
     <value>New Services for &amp;Unix Connection...</value>
   </data>
-  <data name="Menu.ReproduceTerminal">
+  <data name="Menu.ReproduceTerminal" xml:space="preserve">
     <value>&amp;Reproduce</value>
   </data>
-  <data name="Menu.ReviveTerminal">
+  <data name="Menu.ReviveTerminal" xml:space="preserve">
     <value>&amp;Revive</value>
   </data>
-  <data name="Util.SelectLogFileByDialog.Caption">
+  <data name="Util.SelectLogFileByDialog.Caption" xml:space="preserve">
     <value>Save log file</value>
   </data>
-  <data name="Util.SelectPrivateKey.Caption">
+  <data name="Util.SelectPrivateKey.Caption" xml:space="preserve">
     <value>Select private key file</value>
   </data>
-  <data name="Util.SelectPicture.Caption">
+  <data name="Util.SelectPicture.Caption" xml:space="preserve">
     <value>Select picture file</value>
   </data>
-  <data name="Menu.OpenShortcutFile">
-    <value>&amp;Open shortcut file...</value>
-  </data>
-  <data name="Menu.SaveShortcutFile">
-    <value>&amp;Save shortcut file...</value>
-  </data>
-  <data name="Message.AskCloseTerminalSession">
-    <value>A connection to {0} is active. Do you disconnect?</value>
-  </data>
-  <data name="Caption.OpenShortcutFile">
-    <value>Open shortcut to connection</value>
-  </data>
-  <data name="Caption.SaveShortcutFile">
-    <value>Save shortcut to connection</value>
-  </data>
-  <data name="Menu.OpenShortcutFile">
+  <data name="Menu.OpenShortcutFile" xml:space="preserve">
     <value>&amp;Open Shortcut File...</value>
   </data>
-  <data name="Menu.SaveShortcutFile">
+  <data name="Menu.SaveShortcutFile" xml:space="preserve">
     <value>&amp;Save Shortcut File...</value>
   </data>
-  <data name="Command.OpenShortcutFile">
+  <data name="Message.AskCloseTerminalSession" xml:space="preserve">
+    <value>A connection to {0} is active. Do you disconnect?</value>
+  </data>
+  <data name="Caption.OpenShortcutFile" xml:space="preserve">
+    <value>Open shortcut to connection</value>
+  </data>
+  <data name="Caption.SaveShortcutFile" xml:space="preserve">
+    <value>Save shortcut to connection</value>
+  </data>
+  <data name="Command.OpenShortcutFile" xml:space="preserve">
     <value>Open Shortcut File</value>
   </data>
-  <data name="Command.SaveShortcutFile">
+  <data name="Command.SaveShortcutFile" xml:space="preserve">
     <value>Save Shortcut File</value>
   </data>
-  <data name="Message.AskPasteNewLineChar">
+  <data name="Message.AskPasteNewLineChar" xml:space="preserve">
     <value>Clipboard data contains a new-line character. Do you want to paste it ?</value>
+  </data>
+  <data name="Form.LoginDialog._captionLabel" xml:space="preserve">
+    <value>&amp;Caption</value>
+  </data>
+  <data name="Form.SSHShortcutLoginDialog._captionLabel" xml:space="preserve">
+    <value>Caption</value>
+  </data>
+  <data name="Menu.NewTabConnection" xml:space="preserve">
+    <value>New Tab Telnet/SSH &amp;Connection...</value>
+  </data>
+  <data name="Form.LoginDialog._groupLabel" xml:space="preserve">
+    <value>&amp;Group</value>
   </data>
 </root>

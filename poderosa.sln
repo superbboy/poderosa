@@ -1,5 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerminalEmulator", "TerminalEmulator\TerminalEmulator.csproj", "{7F80731C-443A-4533-90D1-1643A5C1364E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protocols", "Protocols\Protocols.csproj", "{04F18DA5-BF47-48A3-9B8B-B6B93DCBA875}"
@@ -17,6 +19,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAndDebug", "TestAndDebug\TestAndDebug.csproj", "{AED8E32D-956B-4C77-9BBD-65845A22949F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usability", "Usability\Usability.csproj", "{7B6BA4DA-8390-4605-B979-C2D1CC09BD9A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{55C7D90F-BFD3-4D7E-990B-8D6D0A0CF951} = {55C7D90F-BFD3-4D7E-990B-8D6D0A0CF951}
+		{A6D32222-4FA2-4197-9B48-36199FB49321} = {A6D32222-4FA2-4197-9B48-36199FB49321}
+		{81770BDF-2F29-421D-AC02-10B647FC101A} = {81770BDF-2F29-421D-AC02-10B647FC101A}
+		{BA5ADFF2-747A-4090-B758-44C70FC1544F} = {BA5ADFF2-747A-4090-B758-44C70FC1544F}
+		{C9B6C0FE-904C-4809-887D-2AAA168AB1E1} = {C9B6C0FE-904C-4809-887D-2AAA168AB1E1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialPort", "SerialPort\SerialPort.csproj", "{81770BDF-2F29-421D-AC02-10B647FC101A}"
 EndProject

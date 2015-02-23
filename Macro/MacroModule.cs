@@ -137,14 +137,14 @@ namespace Poderosa.MacroInternal {
         public IEnumerable<MacroModule> Modules {
             get {
                 if (!_touchedPreference)
-                    LoadFromPreference(); //’x‰„•]‰¿
+                    LoadFromPreference(); //æŠ¶å¢‘æ˜¡å£™
                 return _entries;
             }
         }
         public int ModuleCount {
             get {
                 if (!_touchedPreference)
-                    LoadFromPreference(); //’x‰„•]‰¿
+                    LoadFromPreference(); //æŠ¶å¢‘æ˜¡å£™
                 return _entries.Count;
             }
         }

@@ -25,7 +25,7 @@ namespace Poderosa.Terminal {
         void EndCommand(List<GLine> command_result);
     }
 
-    //Extension Point—p
+    //Extension Pointæ¢¡
     /// <summary>
     /// 
     /// </summary>

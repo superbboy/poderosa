@@ -79,7 +79,7 @@ namespace Poderosa.Usability {
     }
 
 #if false
-    //UsabilityPlugin�̃I�v�V�����BGUI�ł̐ݒ�͂Ȃ��̂Ŋy�Ȏ���
+    //UsabilityPluginのオプション。GUIでの設定はないので楽な実装
     internal class UsabilityPluginPreference : IPreferenceSupplier {
         private IStringPreferenceItem _knownHostsPath;
 

@@ -42,7 +42,7 @@ namespace Granados.SSH2 {
         //MAC for transmission and reception
         private MAC _tMAC;
         private readonly SSH2PacketBuilder _packetBuilder;
-        private readonly SynchronizedPacketReceiver _packetReceiver;
+        private readonly SSH2SynchronizedPacketReceiver _packetReceiver;
 
         //server info
         private readonly SSH2ConnectionInfo _cInfo;
@@ -61,7 +61,7 @@ namespace Granados.SSH2 {
             _cInfo._serverVersionString = serverversion;
             _cInfo._clientVersionString = clientversion;
 
-            _packetReceiver = new SynchronizedPacketReceiver(this);
+            _packetReceiver = new SSH2SynchronizedPacketReceiver(this);
             _packetBuilder = new SSH2PacketBuilder(_packetReceiver);
         }
         internal void SetAgentForwardConfirmed(bool value) {
@@ -534,7 +534,7 @@ namespace Granados.SSH2 {
             wr.WriteString(msg);
             wr.WriteString(""); //language
             TransmitPacket(packet);
-            //!!TODO �N���C�A���g����̐ؒf���N�G�X�g��Ԃɐ؂�ւ���
+            //!!TODO クライアントからの切断リクエスト状態に切り替える
             Close();
         }
 
@@ -575,6 +575,20 @@ namespace Granados.SSH2 {
         }
         internal void TraceReceptionEvent(PacketType pt, byte[] msg) {
             TraceReceptionEvent(pt.ToString(), Encoding.ASCII.GetString(msg));
+        }
+    }
+
+    internal class SSH2SynchronizedPacketReceiver : SynchronizedPacketReceiver {
+
+        public SSH2SynchronizedPacketReceiver(SSHConnection c) : base(c) {
+        }
+
+        public override void OnData(DataFragment data) {
+            base.OnData(data);
+            if (data.Length >= 1 && data.ByteAt(0) == (byte)PacketType.SSH_MSG_NEWKEYS) {
+                // wait until SSH_MSG_NEWKEYS packet is dequeued.
+                WaitEmpty();
+            }
         }
     }
 
