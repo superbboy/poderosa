@@ -308,15 +308,12 @@ namespace Poderosa.View {
                     full_invalidate = false;
                     r.X = 0;
                     r.Width = this.ClientSize.Width;
-                    int topLine = 0; // GetTopLine().ID;
+                    int topLine = GetTopLine().ID;
                     int y1 = rgn.LineIDStart - topLine;
                     int y2 = rgn.LineIDEnd + 1 - topLine;
                     RenderProfile prof = GetRenderProfile();
                     r.Y = BORDER + (int)(y1 * (prof.Pitch.Height + prof.LineSpacing));
                     r.Height = (int)((y2 - y1) * (prof.Pitch.Height + prof.LineSpacing)) + 1;
-                    Debug.WriteLine(String.Format("TopLine{0}, Rgn:LineIDStart{1} LineIDEnd{2}", topLine, rgn.LineIDEnd, rgn.LineIDEnd));
-                    Debug.WriteLine(String.Format("Invalid Rectangle:X{0} Width{1} Y{2} Height{3}", r.X, r.Width, r.Y, r.Height
-                        ));
                 }
             }
 
